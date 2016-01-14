@@ -6,6 +6,7 @@
 	<meta name="keywords" content="伏魔道 官方论坛 绘影区 资料区 攻略区">
 	<meta name="description" content="我的三藏取经故事果然有问题 ">
     <meta name="author" content="heyanfang">
+    <meta HTTP-EQUIV="Pragma" CONTENT="no-cache">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <meta name="viewport" content="width=640,user-scalable=yes">
     <link rel="stylesheet" type="text/css" href="css/index.css">
@@ -30,7 +31,10 @@
 		<!-- video begin -->
 		<div class="video_bg">
 			<div  class="game_vi">
-				<video src="http://cdn.hoolaiimg.com/video/intro31.mp4" width="100%" height="100%" controls autobuffer autoplay="autoplay"  loop="loop"></video>
+             <video width="93%" height="99%" controls="controls">
+            <source src="http://cdn.hoolaiimg.com/video/intro31.mp4" type="video/mp4" width="99%" height="99%">
+            </video>
+			<!--     <video src="http://cdn.hoolaiimg.com/video/intro31.mp4" width="99%" height="99%" controls autobuffer autoplay="autoplay"  loop="loop"></video> -->
 			</div>
 		</div>
         <!-- video end -->
@@ -39,13 +43,13 @@
            	<a class="toutiao" href="" id="TOU"></a>
            	<div class="content">
                 <ul class="posts" id="pages">
-                	<li><a href="">绘影区绘影区</a><i>1013</i></li>
-                	<li><a href=""></a><i></i></li>
-                	<li><a href=""></a><i></i></li>
-                	<li><a href=""></a><i></i></li>
-                	<li><a href=""></a><i></i></li>
+                	<!-- <li><a href="">绘影区绘影区</a><i>1013</i></li>
+                    <li><a href=""></a><i></i></li>
+                    <li><a href=""></a><i></i></li>
+                    <li><a href=""></a><i></i></li>
+                    <li><a href=""></a><i></i></li> -->
 
-                </ul> <a class="more" onclick="clickNextPage()">查看更多</a>
+                </ul><a class="more" onclick="clickNextPage()">查看更多>></a>
             </div>
            </div>
         <!-- today news end -->
@@ -63,7 +67,7 @@
     $(function () {
     var height = document.documentElement.clientHeight;
     console.log(height);
-    $('.butt_bg').css('height', height + 1);
+    $('.butt_bg').css('height', height);
 });
 	</script>
 </body>
