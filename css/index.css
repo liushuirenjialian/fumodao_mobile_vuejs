@@ -203,7 +203,7 @@ body{
 .herop .wrap{
     width: 100%;
     margin: 0 auto;
-    position: absolute;
+   /*  position: absolute; */
 }
 .herop .banner{
   background: url(../img/heroimg/img_h_10.png) no-repeat;
@@ -238,7 +238,7 @@ body{
 
 .herop .body_type 
 {  width: 100%;
-
+    top:300px;
      position: absolute; 
   /*   left: 105px;
   top: 350px; */
@@ -251,7 +251,7 @@ body{
     position: absolute;
     width: 400px; 
     height: 135px;
-    top: 361px;
+    top: 132px; 
     margin-left: 90px;
     border: 1px solid red;
     z-index: 90;
@@ -300,23 +300,25 @@ body{
 }
 
 .herop  .img_bg{
- 
+   /*  margin-top: -623px; */
     background: url(../img/heroimg/rolebg.jpg)no-repeat;
     width: 640px;
     height: 405px;
+    position: absolute;
+    top: -232px;
 }
 .herop .touxiang{
     width: 640px;
     height: 300px;
     position: absolute;
-    top: 140px;
-
+    top: 281px;
+    background: url(../img/heroimg/heroi_03.jpg) repeat;
 }
 .herop .list_nav{
-    background: url(../img/heroimg/heroi_03.jpg) repeat;
+  background: url(../img/heroimg/heroi_03.jpg) repeat; 
     width: 640px;
     height: 400px;
-    position: absolute;
+   /*  position: absolute; */
 }
 .herop .list_nav ul li{
     position: relative;
@@ -351,17 +353,17 @@ body{
 .herop .contents .heor_bg {
     background: url(../img/heroimg/YELO.jpg)repeat;
     width: 100%;
-    min-height: 2000px;
+    min-height: 2500px;
 }
 .herop .contents .heor_info  .tablent_total .talent{
     width: 601px;
     height: 72px;
    background: url(../img/heroimg/sole_02.png)no-repeat;
     position: absolute;
-    top: 900px;
+    top: 730px;
 }
 .herop .contents .heor_info  .tablent_total{
-    padding-top: 500px;
+    padding-top: 200px;
     padding-left: 30px;
 }
 .herop .contents .heor_info .tab_four {
@@ -369,7 +371,7 @@ body{
     min-height: 355px;
     background: url(../img/heroimg/yellow_bo.jpg) repeat;
     position: absolute;
-    top: 980px;
+    top: 823px;
     left: 40px;
 }
 
@@ -409,6 +411,8 @@ position: relative;
     border: 1px solid red;
     padding:1px 15px 4px 15px;
   color: #c8c8c8;
+      background: url(../img/heroimg/yellow_bo.jpg) repeat;
+      min-height: 300px;
 }
 .herop .contents .heor_info .cont .mark{
     border: 1px solid red;
@@ -425,7 +429,7 @@ position: relative;
     background: url(../img/heroimg/yellow_bo.jpg) repeat;
     width: 548px;
     min-height: 102px;
-    margin-top: 500px;
+    margin-top: 884px;
     margin-left: 50px;
 }
 .herop .contents .heor_info .wuqi .info_wuqi {
