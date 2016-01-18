@@ -511,3 +511,9 @@ position: relative;
 /*     position: absolute;
 top: 900px; */
 }
+.herop .foot{
+     background: url(../img/heroimg/heroi_07.jpg)no-repeat;
+    width: 100%;
+    height: 184px;
+    left: 0;
+}
