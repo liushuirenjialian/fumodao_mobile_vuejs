@@ -41,26 +41,28 @@ $(document).ready(function(){
        }*/
  
     //获取英雄详细 、中间三部分
-    var get_heroinfo=$con.find('div.heor_info');
+    var get_heroinfo=$con.find('div.heor_bg');
     var $hero_list=get_heroinfo.find('div.heor1'+i);
     var $img_bg=get_heroinfo.find('div.img_bg');
     var $tablent_total=get_heroinfo.find('div.tablent_total');
+    var $tab_four=$tablent_total.find('div.tab_four');
     var $wuqi=get_heroinfo.find('div.wuqi')
     var $qiyuan=get_heroinfo.find('div.qiyuan');
        for(var i=0;i<leng;i++){
-          $get_heroinfo.append('<div class="heor_info  heor1"><div class="heor_bg"> <div class="img_bg"></div><div class="tablent_total"><div class="talent"></div><div class="tab_four"><ul class="title"></ul><ul class="cont"><span class="mark "></span></ul></div></div><div class="wuqi"><img src="" alt="" /><div class="info_wuqi"></div></div> <div class="qiyuan"><div class="talent"></div><div class="tab_three"><ul class="title"></ul><ul class="cont"><span class="mark"></span></ul></div></div></div></div>');
+          $get_heroinfo.append('<div class="heor_bg  heor1'+i+'"> <div class="img_bg"></div><div class="tablent_total"><div class="talent"></div>div class="tab_four"><ul class="title"></ul><ul class="cont"><span class="mark "></span></ul></div></div><div class="wuqi"><img src="" alt="" /><div class="info_wuqi"></div></div> <div class="qiyuan"><div class="talent"></div><div class="tab_three"><ul class="title"></ul><ul class="cont"><span class="mark"></span></ul></div></div></div>');
           
           /*背景英雄图*/
            var data=dataout[i];
           var custom_fields=data.custom_fields;
           var img_he="";
-          if(custom_fields.img_he){
-            img_he=custom_fields.img_he[0];
+          if(custom_fields.image){
+            img_he=custom_fields.image[0];
           }
               if(img_he){
                 $img_bg.attr('src',img_he)
               }
           // jineng
+            Addjineng(data,$tab_four);
 
           //wuqi
           if(dataOut[i].custom_fields.weapon_name != undefined) {
@@ -96,9 +98,24 @@ $(document).ready(function(){
           //con end
 
      //qiyuan
+
        }
  
       }
+     function  Addjineng(data,$tab_four){
+        if(data.custom_fields.skill1_image !=undefined)
+        {
+         if(data.custom_fields.skill1_name !=undefined)
+         {
+          $tab_four.append('');
+         }
+         else{
+           
+         }
+        }
+
+     } 
+
 })
 
 function Getdatalist(cat,posts) {
