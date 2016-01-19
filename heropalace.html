@@ -9,14 +9,12 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <meta name="viewport" content="width=640,user-scalable=yes">
     <link rel="stylesheet" type="text/css" href="css/index.css">
-    <script type="text/javascript" src="js/jquery.min.js"></script>
-    <script type="text/javascript" src="js/heropalace.js"></script>
 	<title>伏魔道-英雄殿</title>
 </head>
 <body class="herop">
-	<div class="wrap">
+	<div id="app" class="wrap">
     	<!-- banner begin -->
-		<div class="banner"> 
+		<div class="banner">
 		   <div class="back_but"><返回</div>
             <div class="logo"></div>
             <!-- 下载按钮 -->
@@ -24,14 +22,14 @@
         </div>
           <!-- banner end -->
         <!--  conTent begin-->
-        
+
         <div class="body_type">
-     
+
         <!-- 三种类型 -->
          <ul class="title3">
-                <li class="tuji cur"></li>
-                <li class="yuancheng"></li>
-                <li class="fangyu"></li>
+                <li class="tuji cur" onclick="clickHeroItem(this,'tujixing')"></li>
+                <li class="yuancheng" onclick="clickHeroItem(this,'yuanchengxing')"></li>
+                <li class="fangyu" onclick="clickHeroItem(this,'fangyuxing')"></li>
         </ul>
         <!-- 三种类型 end -->
          <div class="contents">
@@ -40,30 +38,24 @@
             <div class="talent_type">
             <!-- 滚动的img -->
                 <ul class="touxiang" id="hero">
-                    <li><span class="shadow"></span><img src="img/heroimg/img_h_14.jpg" alt="" /></li>
-                     <li><span class="shadow"></span><img src="img/heroimg/img_h_14.jpg" alt="" /></li>
-                     <li><span class="shadow"></span><img src="img/heroimg/img_h_14.jpg" alt="" /></li>
-                     <li><span class="shadow"></span><img src="img/heroimg/img_h_14.jpg" alt="" /></li>
-                     <li><span class="shadow"></span><img src="img/heroimg/img_h_14.jpg" alt="" /></li>
-                     <li><span class="shadow"></span><img src="img/heroimg/img_h_14.jpg" alt="" /></li>
-                      <li><span class="shadow"></span><img src="img/heroimg/img_h_14.jpg" alt="" /></li>
-                     <li><span class="shadow"></span><img src="img/heroimg/img_h_14.jpg" alt="" /></li>
-                     <li><span class="shadow"></span><img src="img/heroimg/img_h_14.jpg" alt="" /></li>
-                     <li><span class="shadow"></span><img src="img/heroimg/img_h_14.jpg" alt="" /></li>
+                    <li  v-for="hero in heros"  v-on:click="showDetail(hero.id, $event)">
+                    <span v-if="checkHerlid===hero.id"></span>
+                      <span v-else class="shadow"></span>
+                       <img v-bind:src="hero.img" v-bind:alt="hreo.title" />
+                    </li>
+
                 </ul>
-                   <!-- 滚动的img -->
+                 <!-- 滚动的img -->
             </div>
             </div>
 
              <!-- heor1 -->
            <!--  <div class="heor_info">   -->
             <!-- hero_bg begin -->
-            <div class="heor_bg heor1"> 
+            <div class="heor_bg heor1">
 
                  <!-- 人物头像 -->
-            <div class="img_bg">
-                
-            </div>
+            <div class="img_bg"><img v-bind:src="img_bg"><!-- {{img_bg}} --></div>
             <!-- 人物头像 -->
                <!-- 技能 -->
                <div class="tablent_total">
@@ -71,92 +63,51 @@
                </div>
                <div class="tab_four">
                 <ul class="title">
-                    <li class="cur talentname1">
-                        <img class="fir_talent" src="img/heroimg/img_h_14.jpg"/>
-                        <i>技能名称</i>
+                    <li class="cur talentname1" v-for="jineng in jinengList"  v-on:click="showJinengIntro(jineng,$event)">
+
+                        <img class="fir_talent CUR" v-bind:src="jineng.img"/>
+                        <i>{{jineng.name}}</i>
                     </li>
-                    <li class="talentname2">
-                           <img class="sec_talent" src="img/heroimg/img_h_14.jpg"/>
-                        <i>技能名称</i>
-                    </li>
-                    <li class="talentname3">
-                           <img class="thr_talent" src="img/heroimg/img_h_14.jpg"/>
-                        <i>技能名称</i>
-                    </li>
-                     <li class="talentname4">
-                             <img class="fou_talent" src="img/heroimg/img_h_14.jpg"/>
-                        <i>技能名称</i>
-                     </li>
                 </ul>
                 <ul class="cont">
-                <span class="mark1 ">
-                技能名称技能技能,名称技能名称技能技能名,称技能,名称技能技能名称技能名,称技能技能名称
-                    技能名称技能技能,名称技能技能名称技能,名称技能技能名称技,能名称技能技能名称技,能名称技能技能名称, 技能名称技能 技能名称技,能 技能名称技能 技能名称技能 技能名称技能 技能名称技能
-                    技能名称技能技能,名称技能名称技能技能名,称技能,名称技能技能名称技能名,称技能技能名称
-                    技能名称技能技能,名称技能技能名称技能,名称技能技能名称技,能名称技能技能名称技,能名称技能技能名称, 技能名称技能 技能名称技,能 技能名称技能 技能名称技能 技能名称技能 技能名称技能
-                    技能名称技能技能,名称技能名称技能技能名,称技能,名称技能技能名称技能名,称技能技能名称
-                    技能名称技能技能,名称技能技能名称技能,名称技能技能名称技,能名称技能技能名称技,能名称技能技能名称, 技能名称技能 技能名称技,能 技能名称技能 技能名称技能 技能名称技能 技能名称技能
-                    技能名称技能技能,名称技能名称技能技能名,称技能,名称技能技能名称技能名,称技能技能名称
-                    技能名称技能技能,名称技能技能名称技能,名称技能技能名称技,能名称技能技能名称技,能名称技能技能名称, 技能名称技能 技能名称技,能 技能名称技能 技能名称技能 技能名称技能 技能名称技能
+                <span class="mark1 " v-text="jinengIntro">
                 </span>
-          
                 </ul>
-      
-
-               </div> 
                </div>
-         
+               </div>
             <!-- 武器 -->
              <div class="wuqi">
-               <img src="img/heroimg/img_h_14.jpg" alt="" />
+               <img v-bind:src="weapon_image" alt="" />
                <div class="info_wuqi">
-                   <span class="tianmeng">天命法宝+名称</span>
-                   <span class="tianmeng_info">技能名称技能技能,名称技能名称技能技能名,称技能,名称技能技能名称技能名,称技能技能名称
-                    技能名称技能技能,名称技能技能名称技能,名称技能技能名称技,称技能 技能名称技,能 技能名称技能 技能名称技能 技能名称技能 技能名称技能技能名称技能技能,名称技能名称技能技能名,称技能,名称技能技能名称技能名,称技能技能名称
-              </span>
-               </div> 
+                   <span class="tianmeng">{{ weapon_name }}</span>
+                   <span class="tianmeng_info">
+                     {{weapon_intro}}
+                 </span>
+               </div>
               </div>
-
        <!-- 奇缘 -->
-         	  <div class="qiyuan"> 
+         	  <div class="qiyuan">
                     <div class="talent">
                </div>
                <div class="tab_three">
-            
+
                 <ul class="title">
-                    <li class="cur talentname1">
-                        <img class="fir_talent" src="img/heroimg/img_h_14.jpg"/>
-                        <i>技能名称</i>
-                    </li>
-                    <li class="talentname2">
-                           <img class="sec_talent" src="img/heroimg/img_h_14.jpg"/>
-                        <i>技能名称</i>
-                    </li>
-                    <li class="talentname3">
-                           <img class="thr_talent" src="img/heroimg/img_h_14.jpg"/>
-                        <i>技能名称</i>
+                    <li class="cur talentname1" v-for="temp in qiyuanList"  v-on:click="showQiyuanIntro(temp)">
+                        <img class="fir_talent" v-bind:src="temp.img"/>
+                        <!-- <i>{{temp.name}}</i> -->
                     </li>
                 </ul>
                 <ul class="cont">
-                <span class="mark ">
-                 技能名称技能技能名称技能名称技能技能名称技能名称技能技能名称技能名称技能技能名称
-                    技能名称技能技能名称技能技能名称技能名称技能技能名称技能名称技能技能名称技能名称技能技能名称 技能名称技能 技能名称技能 技能名称技能 技能名称技能 技能名称技能 技能名称技能
-                    技能名称技能 技能名称技能 技能名称技能 技能名称技能 技能名称技能 技能名称技能 技能名称技能 技能名称技能 技能名称技能 技能名称技能 技能名称技能 技能名称技能
-                    技能名称技能 技能名称技能 技能名称技能 技能名称技能 技能名称技能 技能名称技能
-                    技能名称技能 技能名称技能 技能名称技能 技能名称技能 技能名称技能 技能名称技能 技能名称技能
-                    技能名称技能 技能名称技能 技能名称技能 技能名称技能 技能名称技能 技能名称技能 技能名称技能
-                      技能名称技能技能名称技能名称技能技能名称技能名称技能技能名称技能名称技能技能名称
-                    技能名称技能技能名称技能技能名称技能名称技能技能名称技能名称技能技能名称技能名称技能技能名称 技能名称技能 技能名称技能 技能名称技能 技能名称技能 技能名称技能 技能名称技能
-                    技能名称技能 技能名称技能 技能名称技能 技能名称技能 技能名称技能 技能名称技能 技能名称技能 技能名称技能 技能名称技能 技能名称技能 技能名称技能 技能名称技能
-                    技能名称技能 技能名称技能 技能名称技能 技能名称技能 技能名称技能 
+                <span class="mark " v-text="qiyuanIntro">
+
                 </span>
               </ul>
-               </div> 
                </div>
-             <!--  </div>   --> 
+               </div>
+             <!--  </div>   -->
               <!-- heor_bg end -->
               </div>
-              <!-- heor1 --> 
+              <!-- heor1 -->
         </div>
          <!-- 中间三部分结束 -->
         </div>
@@ -171,8 +122,211 @@
          </div>
         <!--  conTent end-->
 
-           
+
 	</div>
-    
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script  src="js/vue.min.js"></script>
+ <script type="text/javascript">
+var resultList={};
+var url = "http://games.hoolai.com/cms/?json=get_category_posts&cat=221&include=title,content,categories,custom_fields&count=10000";
+var vm=new Vue({
+  el: '#app' //指定vue在哪里开始
+  ,data: {
+    heros:[]
+    ,jinengList:[]
+    ,qiyuanList:[]
+    ,jinengIntro:""
+    ,qiyuanIntro:""
+    ,qiyuanList:[]
+    ,weapon_image:""
+    ,weapon_intro:""
+    ,weapon_name:""
+    ,img_bg:""
+    ,checkHerlid:0
+    ,styleObject: {
+
+    }
+  }
+  ,methods:{ //hero_info data get
+    showDetail: function(heroid,e){
+       console.log(heroid);
+      /*      $(e.toElement).closest("ul").find("span").addClass("shadow")
+       $(e.toElement).prev().removeClass("shadow");*/
+       bindHeroJineng(heroid); //
+
+       bindHeroQiyuan(heroid);
+
+       bindHeroWuqi(heroid);
+       bindHeroIMG(heroid);
+       //
+      // $(e).find("span").removeClass("shadow");
+    }
+    ,showJinengIntro:function(row){
+      this.jinengIntro=row.intro;
+      
+/*      $(e.toElement)*/
+    }
+    ,showQiyuanIntro:function(row){
+      this.qiyuanIntro=row.intro;
+    }
+  }
+});
+
+//vm.$data={};
+
+$.post(url,function(result){
+
+      resultList=result;
+
+      bindData();
+
+},"jsonp")
+
+
+function clickHeroItem(e,key){
+ 
+   $(e).parent().find("li").removeClass("cur");
+
+   $(e).addClass("cur");
+
+   getHeroData(key);
+
+}
+//第一次数据显示
+function bindData(){
+
+  getHeroData("tujixing");
+
+}
+
+
+var heroList=[];
+var jinengList=[];
+function getHeroData(key){
+     if(!heroList[key]){ //三次key
+       var posts= resultList.posts;
+       var outList=[];
+       for (var i = 0; i < posts.length; i++) {
+           var post=posts[i];
+           if(!checkCategories(key,post)){ continue;}; //不同类跳出
+           var hero={};
+           hero.id=post.id;
+           hero.title=post.title;
+           var custom_fields=post.custom_fields;
+           hero.img=custom_fields.icon[0];
+
+
+           var other={};
+           other.jinengList=getJinengList(post);
+           other.qiyuanList=getQiyuanList(post);
+
+           try {
+             other.img_bg=post.custom_fields.image[0];
+             other.weapon_image=post.custom_fields.weapon_image[0];
+             other.weapon_intro=custom_fields.weapon_intro[0];
+             other.weapon_name=custom_fields.weapon_name[0];
+           } catch (e) {
+
+           }
+           heroList[hero.id]=other;
+
+
+           outList.push(hero);
+           //outList[hero.id]=hero;
+       }
+       heroList[key]=outList;
+    }
+    vm.$data.heros=heroList[key]; //绑定英雄
+    var heroid=heroList[key][0].id;
+    bindHeroJineng(heroid);
+
+    bindHeroQiyuan(heroid);
+
+    bindHeroWuqi(heroid);
+    bindHeroIMG(heroid);
+}
+
+function getJinengList(post){
+  var jinengList=[];//技能
+   for(var n=1;n<5;n++){
+     var custom_fields=post.custom_fields;
+     var jineng={};
+     try {
+       eval("jineng.img=custom_fields.skill"+n+"_image[0];");//original 计算某个字符串并执行其中的js代码
+       eval("jineng.name=custom_fields.skill"+n+"_name[0];");
+       eval("jineng.intro=custom_fields.karma"+n+"_intro[0];");
+       jinengList.push(jineng);
+     } catch (e) {
+
+     } finally {
+
+     }
+
+   }
+   return jinengList;
+
+}
+
+function getQiyuanList(post){
+  var qiyuanList=[];//技能
+   for(var n=1;n<4;n++){
+     var custom_fields=post.custom_fields;
+     var temp={};
+     try {
+
+       eval("temp.img=custom_fields.karma"+n+"_image[0];");
+      //  eval("temp.name=custom_fields.karma"+n+"_name[0];");
+       eval("temp.intro=custom_fields.karma"+n+"_intro[0];");
+       qiyuanList.push(temp);
+     } catch (e) {
+
+     } finally {
+
+     }
+
+   }
+   return qiyuanList;
+
+}
+
+function bindHeroJineng(heroid){
+    var jinengList=heroList[heroid].jinengList;
+    vm.$data.jinengList=jinengList;
+    vm.$data.jinengIntro=jinengList[0].intro;
+}
+
+function bindHeroQiyuan(heroid){
+  var qiyuanList=heroList[heroid].qiyuanList;
+  vm.$data.qiyuanList=qiyuanList;
+  vm.$data.qiyuanIntro=qiyuanList[0].intro;
+}
+
+function bindHeroWuqi(heroid) {
+  var other=heroList[heroid];
+  vm.$data.weapon_image=other.weapon_image;
+  vm.$data.weapon_intro=other.weapon_intro;
+  vm.$data.weapon_name=other.weapon_name;
+  vm.$data.checkHerlid=heroid;
+}
+function bindHeroIMG(heroid){
+    var other=heroList[heroid];
+  vm.$data.img_bg=other.img_bg;
+
+}
+function checkCategories(key,post){
+    var categories=post.categories;
+    for (var i = 0; i < categories.length; i++) {
+          var data=categories[i];
+          if(data.slug==key){
+            return true;
+          }
+    }
+    return false;
+}
+
+
+
+
+ </script>
 </body>
 </html>

@@ -293,12 +293,15 @@ body{
        width: 116px;
       height: 132px;
 }
-.herop .body_type ul li.yuancheng.cur{
+.herop .body_type ul li.fangyu.cur{
       background: url(../img/heroimg/yuancheng_cur.png) no-repeat 0 0;
      width: 116px;
       height: 132px;
 }
-
+.herop div img{
+  width: 640px;
+    height: 405px;
+}
 .herop  .img_bg{
    /*  margin-top: -623px; */
     background: url(../img/heroimg/rolebg.jpg)no-repeat;
@@ -308,6 +311,7 @@ body{
     top: -232px;
 }
 .herop .touxiang{
+      overflow-y: auto;
     width: 640px;
     height: 300px;
     position: absolute;
@@ -353,7 +357,7 @@ body{
 .herop .contents .heor_bg {
     background: url(../img/heroimg/YELO.jpg)repeat;
     width: 100%;
-    min-height: 2500px;
+    min-height: 1240px;
 }
 .herop .contents .heor_bg  .tablent_total .talent{
     width: 601px;
@@ -376,7 +380,7 @@ body{
   left: 40px; */
   overflow: hidden;
   margin: 0 auto;
-
+ margin-top: 3px;
  /*  margin-top: 100px; */
 }
 
@@ -391,10 +395,10 @@ body{
 }
 .herop .contents .heor_bg .tab_four ul li{
     float: left;
-   /*  width: 140px; */
+  width: 75px;
     cursor: pointer;
     font-size: 18px;line-height: 37px;
-    margin-left: 25px;
+    margin-left: 15px;
     text-align: center;
     padding: 17px;
 }
@@ -404,15 +408,17 @@ width: 79px;
 height: 74px;
     
 }
+
 .herop .contents .heor_bg .tab_four ul li i{
-position: relative;
-    top:60px;
+    position: relative;
+    top:68px;
     font-style: normal;
-    font-size: 15px;
-    left: 10px;
+   /*  font-size: 20px; */
+    left: -1px;
     color: #b7a207;
 }
 .herop .contents .heor_bg .cont{
+      font-size: 20px;
    /*  border: 1px solid red; */
     padding:1px 15px 4px 15px;
   color: #c8c8c8;
@@ -479,7 +485,7 @@ position: relative;
   top: 980px;
   left: 40px; */
  /*  margin-top: 200px; */
-  
+   margin-top: 3px;
 }
 .herop .contents .heor_bg .tab_three ul.title{
     width: 550px;
@@ -492,7 +498,7 @@ position: relative;
 }
 .herop .contents .heor_bg .tab_three ul li{
     float: left;
-   /*  width: 140px; */
+    width: 90px; 
     cursor: pointer;
     font-size: 18px;line-height: 37px;
     margin-left: 25px;
@@ -515,7 +521,7 @@ position: relative;
 }.herop .contents .heor_bg  .qiyuan .talent{
     width: 601px;
     height: 72px;
-   background: url(../img/heroimg/sole_02.png)no-repeat;
+   background: url(../img/heroimg/qiyuan_07.png)no-repeat;
 /*     position: absolute;
 top: 900px; */
 }
