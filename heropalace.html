@@ -37,13 +37,14 @@
          	<div class="list_nav">
             <div class="talent_type">
             <!-- 滚动的img -->
+            <div  class="touxiang">
                 <ul class="touxiang" id="hero">
                     <li  v-for="hero in heros"  v-on:click="showDetail(hero.id, $event)">
                     <span v-if="checkHerlid===hero.id"></span>
                       <span v-else class="shadow"></span>
                        <img v-bind:src="hero.img" v-bind:alt="hreo.title" />
                     </li>
-                </ul>
+                </ul></div>
                  <!-- 滚动的img -->
             </div>
             </div>
@@ -62,7 +63,8 @@
                <div class="tab_four">
                 <ul class="title">
                     <li class="talentname1" v-for="jineng in jinengList"  v-on:click="showJinengIntro(jineng,$event)">
-                     <div>
+                  <!--   <span></span> -->
+                     <div class="{{ jinengname | jinengClass jineng.name }}">
                         <img class="fir_talent " v-bind:src="jineng.img"/>
                         <i>{{jineng.name}}</i>
                      </div> 
@@ -92,6 +94,7 @@
 
                 <ul class="title">
                     <li class="cur talentname1" v-for="temp in qiyuanList"  v-on:click="showQiyuanIntro(temp)">
+                    <div></div>
                         <img class="fir_talent" v-bind:src="temp.img"/>
                         <!-- <i>{{temp.name}}</i> -->
                     </li>
@@ -143,6 +146,7 @@ var vm=new Vue({
     ,checkJI:""
     ,img_bg:""
     ,checkHerlid:0
+    ,jinengname:""
     ,styleObject: {
 
     }
@@ -163,7 +167,7 @@ var vm=new Vue({
     }
     ,showJinengIntro:function(row){
       this.jinengIntro=row.intro;
- 
+      this.jinengname=row.name;
     }
     ,showQiyuanIntro:function(row){
       this.qiyuanIntro=row.intro;
@@ -195,7 +199,7 @@ function clickHeroItem(e,key){
 function bindData(){
 
   getHeroData("tujixing");
-
+ 
 }
 
 
@@ -228,12 +232,18 @@ function getHeroData(key){
 
            }
            heroList[hero.id]=other;
-
+           
 
            outList.push(hero);
            //outList[hero.id]=hero;
        }
        heroList[key]=outList;
+      var length=heroList[key].length;
+      var $touxiang=$("div.body_type").find("div.contents .touxiang ul");  
+      var $touli=$touxiang.find('li');
+      $touxiang.css('width', (length+1)*134/2 + 'px');
+      console.log(length);
+
     }
     vm.$data.heros=heroList[key]; //绑定英雄
     var heroid=heroList[key][0].id;
@@ -292,6 +302,8 @@ function bindHeroJineng(heroid){
     var jinengList=heroList[heroid].jinengList;
     vm.$data.jinengList=jinengList;
     vm.$data.jinengIntro=jinengList[0].intro;
+
+     vm.$data.jinengname=jinengList[0].name;
 }
 
 function bindHeroQiyuan(heroid){
@@ -331,7 +343,21 @@ function checkCategories(key,post){
 }
 
 
+Vue.filter('jinengClass', function (value,oldname) {
+  if(value===oldname){
+    return "jineng";
+  }else{
+    return "";
+  } 
+})
 
+// 计算头像区的宽度
+$(document).ready(function(){
+   var $touxiang=$("div.body_type").find("div.contents .touxiang ul");  
+    var $touli=$touxiang.find('li');
+    console.log($touli.length);
+
+})
 
  </script>
 </body>
