@@ -253,7 +253,7 @@ body{
     height: 135px;
     top: 132px; 
     margin-left: 90px;
-    border: 1px solid red;
+/*     border: 1px solid red; */
     z-index: 90;
 }
 .herop ul.title3 li{
@@ -265,20 +265,20 @@ body{
     position: absolute;
 }
 .herop .body_type ul li.tuji{
-    left: 19px;
+    left: -2px;
       background: url(../img/heroimg/tuji.png) no-repeat 0 0;
       width: 116px;
       height: 132px;
 }
 .herop .body_type ul li.yuancheng{
-    left: 151px;
+    left: 174px;
       background: url(../img/heroimg/yuancheng.png) no-repeat 0 0;
        width: 116px;
       height: 132px;
 }
 
 .herop .body_type ul li.fangyu{
-    left: 285px;
+    left: 348px;
       background: url(../img/heroimg/fangyu.png) no-repeat 0 0;
        width: 116px;
       height: 132px;
@@ -310,9 +310,13 @@ body{
     position: absolute;
     top: -232px;
 }
-.herop .touxiang{
-      overflow-y: auto;
+/* .herop .contents .talent_type{
+    overflow: hidden;
     width: 640px;
+ }*/
+.herop .touxiang{
+      overflow-x: auto;
+  /*   width: 1220px; */
     height: 300px;
     position: absolute;
     top: 281px;
@@ -371,6 +375,12 @@ body{
     margin-left: 30px;
     padding-top: 20px;
 }
+.herop .contents .heor_bg .tab_four ul li div{
+background-color: #5d3810;
+    width: 121px;
+    height: 113px;
+}
+
 .herop .contents .heor_bg .tab_four {
     width: 550px;
     min-height: 355px;
@@ -406,12 +416,13 @@ body{
 position: absolute;
 width: 79px;
 height: 74px;
-    
+margin-top: 13px;
+ margin-left: -5px;
 }
 
 .herop .contents .heor_bg .tab_four ul li i{
     position: relative;
-    top:68px;
+    top:78px;
     font-style: normal;
    /*  font-size: 20px; */
     left: -1px;
@@ -420,15 +431,17 @@ height: 74px;
 .herop .contents .heor_bg .cont{
       font-size: 20px;
    /*  border: 1px solid red; */
-    padding:1px 15px 4px 15px;
+    padding:23px 15px 4px 15px;
   color: #c8c8c8;
       background: url(../img/heroimg/yellow_bo.jpg) repeat;
       min-height: 300px;
+      line-height: 40px;
+      font-size: 28px;
 }
 .herop .contents .heor_bg .cont .mark{
-    border: 1px solid red;
-    line-height: 10px;
-    font-size: 20px;
+   /*  border: 1px solid red; */
+    line-height: 40px;
+    font-size: 28px;
   
 }
 /* .herop .contents .heor_info .tab_four ul li.cur{

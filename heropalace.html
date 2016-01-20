@@ -43,12 +43,10 @@
                       <span v-else class="shadow"></span>
                        <img v-bind:src="hero.img" v-bind:alt="hreo.title" />
                     </li>
-
                 </ul>
                  <!-- 滚动的img -->
             </div>
             </div>
-
              <!-- heor1 -->
            <!--  <div class="heor_info">   -->
             <!-- hero_bg begin -->
@@ -63,10 +61,11 @@
                </div>
                <div class="tab_four">
                 <ul class="title">
-                    <li class="cur talentname1" v-for="jineng in jinengList"  v-on:click="showJinengIntro(jineng,$event)">
-
-                        <img class="fir_talent CUR" v-bind:src="jineng.img"/>
+                    <li class="talentname1" v-for="jineng in jinengList"  v-on:click="showJinengIntro(jineng,$event)">
+                     <div>
+                        <img class="fir_talent " v-bind:src="jineng.img"/>
                         <i>{{jineng.name}}</i>
+                     </div> 
                     </li>
                 </ul>
                 <ul class="cont">
@@ -76,7 +75,7 @@
                </div>
                </div>
             <!-- 武器 -->
-             <div class="wuqi">
+             <div class="wuqi" v-show="weapon_image">
                <img v-bind:src="weapon_image" alt="" />
                <div class="info_wuqi">
                    <span class="tianmeng">{{ weapon_name }}</span>
@@ -141,6 +140,7 @@ var vm=new Vue({
     ,weapon_image:""
     ,weapon_intro:""
     ,weapon_name:""
+    ,checkJI:""
     ,img_bg:""
     ,checkHerlid:0
     ,styleObject: {
@@ -163,8 +163,7 @@ var vm=new Vue({
     }
     ,showJinengIntro:function(row){
       this.jinengIntro=row.intro;
-      
-/*      $(e.toElement)*/
+ 
     }
     ,showQiyuanIntro:function(row){
       this.qiyuanIntro=row.intro;
@@ -302,11 +301,18 @@ function bindHeroQiyuan(heroid){
 }
 
 function bindHeroWuqi(heroid) {
-  var other=heroList[heroid];
+/*  $wuqi=$(content).*/
+
+  var other=heroList[heroid];  
+/*  if(other.weapon_image!=undefined){*/
   vm.$data.weapon_image=other.weapon_image;
   vm.$data.weapon_intro=other.weapon_intro;
   vm.$data.weapon_name=other.weapon_name;
+ /*} else{
+    $wuqi.remove();
+  }*/
   vm.$data.checkHerlid=heroid;
+  vm.$data.checkJI=heroid;
 }
 function bindHeroIMG(heroid){
     var other=heroList[heroid];
