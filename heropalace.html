@@ -5,20 +5,30 @@
 	<meta name="keywords" content="伏魔道 官方论坛 绘影区 资料区 攻略区 英雄殿">
 	<meta name="description" content="手机英雄殿">
     <meta name="author" content="heyanfang">
-    <meta HTTP-EQUIV="Pragma" CONTENT="no-cache">
+    <!-- <meta HTTP-EQUIV="Pragma" CONTENT="no-cache"> -->
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <meta name="viewport" content="width=640,user-scalable=yes">
+    <meta name="viewport" content="width=640,user-scalable=no">
     <link rel="stylesheet" type="text/css" href="css/index.css">
 	<title>伏魔道-英雄殿</title>
+  <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?957b410e98c03d9af173b293757195ef";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
 </head>
 <body class="herop">
 	<div id="app" class="wrap">
     	<!-- banner begin -->
 		<div class="banner">
-		   <div class="back_but"><返回</div>
+		   <div class="back_but"><a href="index.html"><返回</a> </div>
             <div class="logo"></div>
             <!-- 下载按钮 -->
-            <div class="down" title="下载" dataurl="http://huo.dl.hoolaigames.com/hcrlm.apk" href="javascript:void(0)"></div>
+            <div class="down" title="下载"><a href="download.html"></a></div>
         </div>
           <!-- banner end -->
         <!--  conTent begin-->
@@ -28,8 +38,9 @@
         <!-- 三种类型 -->
          <ul class="title3">
                 <li class="tuji cur" onclick="clickHeroItem(this,'tujixing')"></li>
-                <li class="yuancheng" onclick="clickHeroItem(this,'yuanchengxing')"></li>
                 <li class="fangyu" onclick="clickHeroItem(this,'fangyuxing')"></li>
+                <li class="yuancheng" onclick="clickHeroItem(this,'yuanchengxing')"></li>
+               
         </ul>
         <!-- 三种类型 end -->
          <div class="contents">
@@ -54,7 +65,7 @@
             <div class="heor_bg heor1">
 
                  <!-- 人物头像 -->
-            <div class="img_bg"><img v-bind:src="img_bg"><!-- {{img_bg}} --></div>
+            <div class="img_bg" style="{{ hero_image | bgimg}}"><!-- <img v-bind:src="img_bg"> --><!-- {{img_bg}} --></div>
             <!-- 人物头像 -->
                <!-- 技能 -->
                <div class="tablent_total">
@@ -78,9 +89,12 @@
                </div>
             <!-- 武器 -->
              <div class="wuqi" v-show="weapon_image">
-               <img v-bind:src="weapon_image" alt="" />
+             <div class="tianming">
+             <div class="wuqi_img">
+               <img v-bind:src="weapon_image" alt="" /></div>
+                 <span class="tianmeng">{{ weapon_name }}</span></div>
                <div class="info_wuqi">
-                   <span class="tianmeng">{{ weapon_name }}</span>
+                 
                    <span class="tianmeng_info">
                      {{weapon_intro}}
                  </span>
@@ -88,15 +102,15 @@
               </div>
        <!-- 奇缘 -->
          	  <div class="qiyuan">
-                    <div class="talent">
+               <div class="talent">
                </div>
                <div class="tab_three">
 
                 <ul class="title">
-                    <li class="cur talentname1" v-for="temp in qiyuanList"  v-on:click="showQiyuanIntro(temp)">
-                    <div></div>
+                    <li class="talentname1" v-for="temp in qiyuanList"  v-on:click="showQiyuanIntro(temp)">
+                    <div class="{{qiyuanname | jinengClass temp.id}}">
                         <img class="fir_talent" v-bind:src="temp.img"/>
-                        <!-- <i>{{temp.name}}</i> -->
+                        <i>{{temp.name}}</i></div>
                     </li>
                 </ul>
                 <ul class="cont">
@@ -115,7 +129,7 @@
         </div>
         <div class="foot">
        <div >
-       <div class="down_foot"></div>
+       <div class="down_foot"><a href="download.html"></a></div>
         <p>
             Copyright © 2012 Hoolai Games. All Rights Reserved 互爱互动（北京）科技有限公司版权所有
         </p>
@@ -144,9 +158,10 @@ var vm=new Vue({
     ,weapon_intro:""
     ,weapon_name:""
     ,checkJI:""
-    ,img_bg:""
+    ,hero_image:""
     ,checkHerlid:0
     ,jinengname:""
+    ,qiyuanname:""
     ,styleObject: {
 
     }
@@ -161,8 +176,8 @@ var vm=new Vue({
        bindHeroQiyuan(heroid);
 
        bindHeroWuqi(heroid);
-       bindHeroIMG(heroid);
-       //
+     
+       //  bindHeroIMG(heroid);
       // $(e).find("span").removeClass("shadow");
     }
     ,showJinengIntro:function(row){
@@ -171,6 +186,8 @@ var vm=new Vue({
     }
     ,showQiyuanIntro:function(row){
       this.qiyuanIntro=row.intro;
+      this.qiyuanname=row.id;
+
     }
   }
 });
@@ -224,47 +241,66 @@ function getHeroData(key){
            other.qiyuanList=getQiyuanList(post);
 
            try {
-             other.img_bg=post.custom_fields.image[0];
-             other.weapon_image=post.custom_fields.weapon_image[0];
-             other.weapon_intro=custom_fields.weapon_intro[0];
-             other.weapon_name=custom_fields.weapon_name[0];
-           } catch (e) {
+          
+             other.hero_image=(post.custom_fields.image_mobile)?post.custom_fields.image_mobile[0]:"";
+            /* other.weapon_image=post.custom_fields.weapon_image[0];*/
+             other.weapon_image=(post.custom_fields.weapon_image)?post.custom_fields.weapon_image[0]:"";
+             other.weapon_name=(post.custom_fields.weapon_name)?post.custom_fields.weapon_name[0]:"";
+             other.weapon_intro=(post.custom_fields.weapon_intro)?post.custom_fields.weapon_intro[0]:"";
+            /* other.weapon_name=(post.custom_fields.weapon_name)?post.custom_fields.weapon_name[0]:"";*/
 
+           } catch (e) {
+              console.log(e);
            }
            heroList[hero.id]=other;
-           
-
            outList.push(hero);
            //outList[hero.id]=hero;
        }
        heroList[key]=outList;
+    /*  var length=heroList[key].length;
+      var $touxiang=$("div.body_type").find("div.contents .touxiang ul");  
+      var $touli=$touxiang.find('li');
+      $touxiang.css('width', (length+1)*134/2 + 'px');
+      console.log(length);*/
+
+    }
+    vm.$data.heros=heroList[key]; //绑定英雄
       var length=heroList[key].length;
       var $touxiang=$("div.body_type").find("div.contents .touxiang ul");  
       var $touli=$touxiang.find('li');
       $touxiang.css('width', (length+1)*134/2 + 'px');
       console.log(length);
-
-    }
-    vm.$data.heros=heroList[key]; //绑定英雄
     var heroid=heroList[key][0].id;
     bindHeroJineng(heroid);
 
     bindHeroQiyuan(heroid);
 
     bindHeroWuqi(heroid);
-    bindHeroIMG(heroid);
+  /*  bindHeroIMG(heroid);*/
 }
 
 function getJinengList(post){
   var jinengList=[];//技能
    for(var n=1;n<5;n++){
      var custom_fields=post.custom_fields;
-     var jineng={};
+     var temp={};
      try {
-       eval("jineng.img=custom_fields.skill"+n+"_image[0];");//original 计算某个字符串并执行其中的js代码
-       eval("jineng.name=custom_fields.skill"+n+"_name[0];");
-       eval("jineng.intro=custom_fields.karma"+n+"_intro[0];");
-       jinengList.push(jineng);
+       // eval("jineng.img=custom_fields.skill"+n+"_image[0];");//original 计算某个字符串并执行其中的js代码
+       // eval("jineng.name=custom_fields.skill"+n+"_name[0];");
+       // eval("jineng.intro=custom_fields.skill"+n+"_intro[0];");
+       var url="img/heroimg/img_h_14.jpg";
+       eval("temp.img=(custom_fields.skill"+n+"_image)?custom_fields.skill"+n+"_image[0]:'';");
+       eval("temp.intro=(custom_fields.skill"+n+"_intro)?custom_fields.skill"+n+"_intro[0]:'';");
+       eval("temp.name=(custom_fields.skill"+n+"_name)?custom_fields.skill"+n+"_name[0]:'';");
+
+       if(temp.img==""&&temp.intro==""&&temp.name==""){
+          continue;
+       }else{
+          if(temp.img==""){
+              temp.img=url;
+          }
+       }
+       jinengList.push(temp);
      } catch (e) {
 
      } finally {
@@ -282,20 +318,19 @@ function getQiyuanList(post){
      var custom_fields=post.custom_fields;
      var temp={};
      try {
-
-       eval("temp.img=custom_fields.karma"+n+"_image[0];");
-      //  eval("temp.name=custom_fields.karma"+n+"_name[0];");
-       eval("temp.intro=custom_fields.karma"+n+"_intro[0];");
+       var url="img/heroimg/img_h_14.jpg";
+       temp.id=n;
+       eval("temp.img=(custom_fields.karma"+n+"_image)?custom_fields.karma"+n+"_image[0]:ur;");
+       eval("temp.intro=(custom_fields.karma"+n+"_intro)?custom_fields.karma"+n+"_intro[0]:'';");
+       eval("temp.name=(custom_fields.karma"+n+"_name)?custom_fields.karma"+n+"_name[0]:'';");
        qiyuanList.push(temp);
      } catch (e) {
 
      } finally {
 
      }
-
    }
    return qiyuanList;
-
 }
 
 function bindHeroJineng(heroid){
@@ -310,6 +345,7 @@ function bindHeroQiyuan(heroid){
   var qiyuanList=heroList[heroid].qiyuanList;
   vm.$data.qiyuanList=qiyuanList;
   vm.$data.qiyuanIntro=qiyuanList[0].intro;
+  vm.$data.qiyuanname=qiyuanList[0].id;
 }
 
 function bindHeroWuqi(heroid) {
@@ -320,17 +356,18 @@ function bindHeroWuqi(heroid) {
   vm.$data.weapon_image=other.weapon_image;
   vm.$data.weapon_intro=other.weapon_intro;
   vm.$data.weapon_name=other.weapon_name;
+   vm.$data.hero_image=other.hero_image;
  /*} else{
     $wuqi.remove();
   }*/
   vm.$data.checkHerlid=heroid;
   vm.$data.checkJI=heroid;
 }
-function bindHeroIMG(heroid){
+/*function bindHeroIMG(heroid){
     var other=heroList[heroid];
   vm.$data.img_bg=other.img_bg;
 
-}
+}*/
 function checkCategories(key,post){
     var categories=post.categories;
     for (var i = 0; i < categories.length; i++) {
@@ -342,7 +379,9 @@ function checkCategories(key,post){
     return false;
 }
 
-
+Vue.filter('bgimg',function(img){
+  if(img){return 'background:url('+img+')no-repeat';}
+})
 Vue.filter('jinengClass', function (value,oldname) {
   if(value===oldname){
     return "jineng";
@@ -352,13 +391,8 @@ Vue.filter('jinengClass', function (value,oldname) {
 })
 
 // 计算头像区的宽度
-$(document).ready(function(){
-   var $touxiang=$("div.body_type").find("div.contents .touxiang ul");  
-    var $touli=$touxiang.find('li');
-    console.log($touli.length);
-
-})
-
+/*
+*/
  </script>
 </body>
 </html>

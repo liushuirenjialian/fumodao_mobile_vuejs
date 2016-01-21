@@ -6,12 +6,22 @@
 	<meta name="keywords" content="伏魔道 官方论坛 绘影区 资料区 攻略区">
 	<meta name="description" content="我的三藏取经故事果然有问题 ">
     <meta name="author" content="heyanfang">
-    <meta HTTP-EQUIV="Pragma" CONTENT="no-cache">
+   <!--  <meta HTTP-EQUIV="Pragma" CONTENT="no-cache"> -->
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <meta name="viewport" content="width=640,user-scalable=yes">
+    <meta name="viewport" content="width=640,user-scalable=no">
     <link rel="stylesheet" type="text/css" href="css/index.css">
      <script  src="js/jquery.min.js"></script>
-     <script   src='js/index.js'></script>
+     <script  src='js/index.js'></script>
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?957b410e98c03d9af173b293757195ef";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+
 </head>
 <body class="index">
 	<div class="wrap">
@@ -21,18 +31,18 @@
 					<li class="offical_bbs cur"><a href="javascript:void(0)">官方论坛</a></li>
 					<li class="huiying_area"><a href="javasript:void(0)">绘影区</a></li>
 					<li class="home"><a href="javascript:void(0)">伏魔道</a></li>
-					<li class="data_area"><a href="javascript:void(0)">资料区</a></li>
+					<li class="data_area"><a href="heropalace.html">资料区</a></li>
 					<li class="strategy_area"><a href="javascript:void(0)">攻略区</a></li>
 				</ul>
 		<!-- banner end -->
 		<div class="butt_bg">
-			<div class="down_gamebg"><a href="#" class="down_game">下载游戏</a></div>
+			<div class="down_gamebg"><a href="download.html" class="down_game">下载游戏</a></div>
 		</div>
 		<!-- video begin -->
 		<div class="video_bg">
 			<div  class="game_vi">
-             <video width="93%" height="99%" controls="controls">
-            <source src="http://cdn.hoolaiimg.com/video/intro31.mp4" type="video/mp4" width="99%" height="99%">
+             <video width="514px" height="290px" controls="controls">
+            <source src="http://cdn.hoolaiimg.com/video/intro31.mp4" type="video/mp4" width="514px" height="290px">
             </video>
 			<!--     <video src="http://cdn.hoolaiimg.com/video/intro31.mp4" width="99%" height="99%" controls autobuffer autoplay="autoplay"  loop="loop"></video> -->
 			</div>
@@ -67,7 +77,8 @@
     $(function () {
     var height = document.documentElement.clientHeight;
     console.log(height);
-    $('.butt_bg').css('height', height);
+    $('.butt_bg').css('height', height-28);
+  /*  console.log()*/
 });
 	</script>
 </body>

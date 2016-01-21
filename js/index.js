@@ -1,7 +1,7 @@
 var toutiao_url = "http://games.hoolai.com/cms/?post_id=6643&json=get_post&include=title";
 var news_url="http://games.hoolai.com/cms/?cat=227&json=get_category_posts&include=title,categories,date&count=500";
-var Url="http://games.hoolai.com/cms/?json=get_category_posts&cat=208&include=title,content,custom_fields,date,categories&count=500";
-
+/*var Url="http://games.hoolai.com/cms/?json=get_category_posts&cat=208&include=title,content,custom_fields,date,categories&count=500";
+*/
 $(document).ready(function(){
     request(toutiao_url, function(err, data) {
         if (err) {
@@ -9,7 +9,7 @@ $(document).ready(function(){
         } else {
             var _data = data.post;
             if (_data) {
-                $('div.news_bg a.toutiao').text(_data.title).attr('href', 'newsContent.html#post_id=' + _data.id);
+                $('div.news_bg a.toutiao').text(_data.title).attr('href', 'fmddetail.html?post_id=' + _data.id);
             } else {
                 console.log("后台没有发文章");
             }
@@ -18,7 +18,7 @@ $(document).ready(function(){
         }
     });
 
-    request(Url,function(err,data){
+    request(news_url,function(err,data){
         if(err){console.log(err);}
         else{
             /*var Newdata=data.post;*/
@@ -32,13 +32,16 @@ $(document).ready(function(){
                 if(i%rows==0){//6/16=0  11/5=
                     p++;
                 }
-        
-            if(post.custom_fields.date){
-            posts+='<li class="page'+p+'"><a href="newsContent.html?&post_id='+post.id+'">'+post.title+'</a><i>'+post.custom_fields.date+'</i></li>';
+             var date="";
+            if(post.date){
+            posts+='<li class="page'+p+'"><a href="fmddetail.html?tag='+window.tag+'&post_id='+post.id+'">'+post.title+'</a><i>'+post.date+'</i></li>';
             }
             else{
-                posts+='<li class="page'+p+'"><a href="newsContent.html?post_id='+post.id+'">'+post.title+'</a></li>';
+            posts+='<li class="page'+p+'"><a href="fmddetail.html?tag='+window.tag+'post_id='+post.id+'">'+post.title+'</a></li>';
             }
+        }
+        if(total<5){
+              $(".more").hide();
         }
         index.countPage=p;
      /*   debugger*/

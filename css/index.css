@@ -65,7 +65,7 @@ body{
     background: url(../img/homepage/home_top_02.jpg) no-repeat top center;
 } 
 .index .wrap{
-    width: 100%;
+    width: 640px;
     margin:0 auto;
    /*  background: #000; */
 
@@ -89,7 +89,7 @@ body{
 .index .nav li a{
     display: inline-block;
     color: #dadada;
-    width: 122px;
+    width: 124px;
     text-align: center;
     text-decoration: none;
     /* border:1px solid red; */
@@ -119,7 +119,8 @@ body{
 
 }
 .index .game_vi{
-  padding:100px 60px 60px 60px;   
+  padding:100px 60px 60px 60px;  
+   
 }
 .index .news_bg{
     background:url(../img/homepage/home_news.jpg) no-repeat;
@@ -136,8 +137,8 @@ body{
     padding-bottom: 22px; 
 }
 .index .content li a{
-    width: 78%;
-    font-size: 20px;
+    width: 350px;
+    font-size: 30px;
     color: #ffffff;
     text-decoration: none;
     overflow: hidden;
@@ -155,7 +156,7 @@ body{
 .index  a.toutiao{
     margin-top: 74px;
     display: inline-block;
-   width: 555px;
+   width: 500px;
    height: 58px;
    margin-left: 55px;
    text-decoration: none;
@@ -168,7 +169,7 @@ body{
     padding-top: 3px;
 }
 .index .content ul{
-   padding:10px 10px 0px 10px;
+   padding:10px 46px 0px 46px
 
 }
 .index .content .more{
@@ -181,7 +182,7 @@ body{
 }
 .index .foot{
     background: url(../img/homepage/home_foot.jpg)no-repeat;
-    width: 100%;
+    width: 640px;
     height: 184px;
     left: 0;
     
@@ -194,29 +195,30 @@ body{
 }
 .index .news_bg .content{
     background: url(../img/homepage/conent.jpg) repeat;
-    width: 100%;
+    width: 640px;
 
 }
 .herop{
 
 }
 .herop .wrap{
-    width: 100%;
+    width: 640px;
     margin: 0 auto;
    /*  position: absolute; */
 }
 .herop .banner{
   background: url(../img/heroimg/img_h_10.png) no-repeat;
-  width: 100%;
+  width: 640px;
   height: 73px;
 
 }
-.herop .banner .back_but{
+.herop .banner .back_but a{
     color: white;
     margin-left:20px; 
     float: left;
     margin-top: 20px;
     font-size: 25px;
+    text-decoration: none;
 }
 .herop .banner .logo{
     float: left;
@@ -227,13 +229,15 @@ body{
     margin-left: 319px;
     margin-top: 10px;
 }
-.herop .banner .down{
+.herop .banner .down a{
     background:url(../img/heroimg/down_05.png) no-repeat;
     width: 144px;
     height: 46px;
     float: right;
     margin-right: 15px;
     margin-top: 14px;
+    
+    display: block;
 }
 
 .herop .body_type 
@@ -271,14 +275,14 @@ body{
       height: 132px;
 }
 .herop .body_type ul li.yuancheng{
-    left: 174px;
+    left: 348px;
       background: url(../img/heroimg/yuancheng.png) no-repeat 0 0;
        width: 116px;
       height: 132px;
 }
 
 .herop .body_type ul li.fangyu{
-    left: 348px;
+    left: 174px;
       background: url(../img/heroimg/fangyu.png) no-repeat 0 0;
        width: 116px;
       height: 132px;
@@ -294,7 +298,7 @@ body{
       height: 132px;
 }
 .herop .body_type ul li.fangyu.cur{
-      background: url(../img/heroimg/yuancheng_cur.png) no-repeat 0 0;
+      background: url(../img/heroimg/fangyu_cur.png) no-repeat 0 0;
      width: 116px;
       height: 132px;
 }
@@ -304,7 +308,7 @@ body{
 }
 .herop  .img_bg{
    /*  margin-top: -623px; */
-    background: url(../img/heroimg/rolebg.jpg)no-repeat;
+  background: url(../img/heroimg/rolebg.jpg)no-repeat; 
     width: 640px;
     height: 405px;
     position: absolute;
@@ -330,8 +334,8 @@ body{
     position: absolute;
     top:0px;
     left: 0px;
-    border: 1px solid red;
-    background: url(../img/heroimg/heroi_03.jpg) repeat;
+/*     border: 1px solid red;
+     */    background: url(../img/heroimg/heroi_03.jpg) repeat;
 }
 .herop .list_nav{
   background: url(../img/heroimg/heroi_03.jpg) repeat; 
@@ -355,7 +359,7 @@ body{
   height:104px;
   display: inline-block;
   background: #fff;
-  background: rgba(255,255,255,0.5);
+  background: rgba(255,255,255,0.4);
   position: absolute;
   top: 0;
   left: 0;
@@ -371,7 +375,7 @@ body{
 }
 .herop .contents .heor_bg {
     background: url(../img/heroimg/YELO.jpg)repeat;
-    width: 100%;
+    width: 640px;
     min-height: 1240px;
 }
 .herop .contents .heor_bg  .tablent_total .talent{
@@ -380,18 +384,26 @@ body{
    background: url(../img/heroimg/sole_02.png)no-repeat;
 /*     position: absolute; 
     top: 730px;*/
+        margin: 0 auto;
 }
 .herop .contents .heor_bg  .tablent_total{
-    margin-top: 173px;
-    margin-left: 30px;
+   /*  margin-top: 173px;
+   margin-left: 30px; */
+  
     padding-top: 20px;
+    margin: 173px auto 0 auto;
+
 }
 .herop .contents .heor_bg .tab_four ul div.jineng{
 background-color: #5d3810;
-    width: 121px;
-    height: 113px;
+    width: 134px;
+    height: 123px;
 }
-
+.herop .contents .heor_bg .tab_three ul div.jineng{
+background-color: #5d3810;
+    width: 182px;
+    height: 124px;
+}
 .herop .contents .heor_bg .tab_four {
     width: 550px;
     min-height: 355px;
@@ -400,9 +412,7 @@ background-color: #5d3810;
   top: 823px;
   left: 40px; */
   overflow: hidden;
-  margin: 0 auto;
- margin-top: 3px;
- /*  margin-top: 100px; */
+  margin: 3px auto;
 }
 
 .herop .contents .heor_bg .tab_four ul.title{
@@ -416,27 +426,32 @@ background-color: #5d3810;
 }
 .herop .contents .heor_bg .tab_four ul li{
     float: left;
-  width: 75px;
+    width: 134px;
     cursor: pointer;
     font-size: 18px;line-height: 37px;
-    margin-left: 15px;
+   /*  margin-left: 15px; 79/4=*/
     text-align: center;
-    padding: 17px;
+    padding-top: 11px;
+        height: 130px;
 }
 .herop .contents .heor_bg .tab_four ul li img{
-position: absolute;
+/* position: absolute; */
 width: 79px;
 height: 74px;
-margin-top: 13px;
- margin-left: -5px;
+display: block;
+margin:4px auto;
+padding-top: 8px;
+/* margin-top: 13px;
+ margin-left: -5px; */
 }
 
 .herop .contents .heor_bg .tab_four ul li i{
-    position: relative;
-    top:78px;
+  display: block;
+/*     position: relative;
+top:81px; */
     font-style: normal;
    /*  font-size: 20px; */
-    left: -1px;
+/*     left: -1px; */
     color: #b7a207;
 }
 .herop .contents .heor_bg .cont{
@@ -464,40 +479,51 @@ margin-top: 13px;
     background: url(../img/heroimg/yellow_bo.jpg) repeat;
     width: 548px;
     min-height: 102px;
-    margin-top: 54px;
-    margin-left: 50px;
+    margin: 54px auto 0 auto;
     overflow: hidden;
 }
 .herop .contents .heor_bg .wuqi .info_wuqi {
-   float: right;
-   margin: 6px 30px 3px 1px;
-      width: 400px;
-   /*  min-height: 200px; */
-     background: url(../img/heroimg/yellow_bo.jpg) repeat;
+    margin: 20px 10px 10px 15px;
+    background: url(../img/heroimg/yellow_bo.jpg) repeat;
 }
+ .herop .wuqi .tianming{
+  position: relative;
+ 
+} 
 
-.herop .contents .heor_bg .wuqi .info_wuqi  .tianmeng {
-    float: left;
+.herop .wuqi .tianming .wuqi_img{
+  background-color: #2c1e0f;
+  width: 115px;
+  height: 115px;
+    position: relative;
+}
+.herop .contents .heor_bg .wuqi .tianmeng {
+    /* float: left; */
     color: #ffb401;
     font-size: 25px;
     width: 403px;
+    height: 17px;
+     position: absolute;
+     top: 33px;
+     left: 154px;
 
 }.herop .contents .heor_bg .wuqi .info_wuqi  .tianmeng_info
 { 
+
     color: #c8c8c8;
-    font-size: 20px;
-    line-height: 10px;
+    font-size: 28px;
+    line-height: 40px;
 
 }
 .herop .contents .heor_bg .wuqi img{
     width: 79px;height: 74px;    float: left;
-    margin: 13px;
+    margin: 18px;
 }
 .herop .contents .heor_bg .qiyuan{
     width: 601px;
     min-height: 400px;
     background: url(../img/heroimg/YELO.jpg)repeat;
-    margin:30px;
+     margin: 30px auto 0px auto;
 }
 .herop .contents .heor_bg .qiyuan .tab_three {
     width: 550px;
@@ -522,47 +548,58 @@ margin-top: 13px;
 }
 .herop .contents .heor_bg .tab_three ul li{
     float: left;
-    width: 90px; 
+    width: 182px; 
     cursor: pointer;
-    font-size: 18px;line-height: 37px;
-    margin-left: 25px;
+    font-size: 18px;
+    line-height: 37px;
+/*     margin-left: 25px; */
     text-align: center;
-    padding: 17px;
+    padding-top: 11px;
 }
 .herop .contents .heor_bg .tab_three ul li img{
-position: absolute;
+/* position: absolute; */
 width: 79px;
-height: 74px;
+height: 79px;
+/*     margin-top: 13px;
+margin-left: -15px; */
+/* margin-top: 20px;
+margin-left: -36px; */
+display: block;
+padding-top: 5px;
+margin:2px auto;
     
 }
 .herop .contents .heor_bg .tab_three ul li i{
-position: relative;
-    top:60px;
+/*     position: relative;
+       left: -9px;
+       top:79px; */
     font-style: normal;
     font-size: 15px;
-    left: 10px;
+    
     color: #b7a207;
+    display: block;
 }.herop .contents .heor_bg  .qiyuan .talent{
     width: 601px;
     height: 72px;
    background: url(../img/heroimg/qiyuan_07.png)no-repeat;
 /*     position: absolute;
 top: 900px; */
+margin:0 auto;
 }
 .herop .foot{
      background: #071b28 url(../img/heroimg/heroi_07.jpg)no-repeat;
-    width: 100%;
-    height: 814px;
-    margin-top: -30px;
+    width: 640px;
+    height: 514px;
+    margin-top: -1px;
 
 }
-.herop .down_foot{
+.herop .down_foot a{
   background: url(../img/heroimg/down_foot_03.jpg)no-repeat;
   width: 490px;
    height: 72px;
+   display: block;
 }
 .herop .foot div p{
- 
    color: #c5c5c5;
     padding-top: 66px;
     text-align: center;
@@ -570,7 +607,106 @@ top: 900px; */
 .herop .foot div{
 
    padding-top: 60px;
-   margin-left: 30px;
+
   width: 490px;
    height: 72px;
+   margin:0 auto;
 }
+
+/*list page*/
+.list .wrap{
+    width: 640px;
+    margin:0 auto;
+}
+/*detail page*/
+.detail .wrap{
+    width: 640px;
+    margin:0 auto;
+}
+.detail  .banner{
+  background: url(../img/listimg/banner.jpg) repeat;
+  width: 640px;
+  height: 93px;
+}
+ .detail .banner .back{
+
+padding-top: 48px;
+} 
+.detail .banner .back a{
+  display: inline-block;
+    font-size: 35px;
+    color: #ffffff;
+    float: left;
+    text-decoration: none;
+
+}
+/* .detail .banner .go_back{
+  float: left;
+} */
+.detail .banner .title
+{ 
+
+ /*  margin-top: 30px; */
+  float: left;
+  color: #ffffff;
+  font-size: 28px;
+  margin-left: 155px;
+}
+.detail .foot{
+     background-color: #1c1c1c;
+    width: 640px;
+    height: 514px;
+    margin-top: -1px;
+
+}
+.detail .down_foot a{
+  background: url(../img/heroimg/down_foot_03.jpg)no-repeat;
+  width: 490px;
+   height: 72px;
+   display: block;
+}
+.detail .foot div p{
+   color: #c5c5c5;
+    padding-top: 66px;
+    text-align: center;
+}
+.detail .foot div{
+
+   padding-top: 60px;
+
+  width: 490px;
+   height: 72px;
+   margin:0 auto;
+}
+.detail .cont{
+  background: url(../img/listimg/con_bg.jpg)repeat;
+   min-height:529px;
+   width: 640px;
+ }
+ .detail .cont .title{
+   text-align: center;
+   font-size: 45px;
+   color: #11628c;
+   padding-top: 35px;
+  padding-bottom: 40px;
+ }
+ .detail .cont .team{
+   text-align: center;
+   font-size: 20px;
+   color: #8f8f8f;
+   border-bottom: 1px solid  #8f8f8f;
+
+ }
+ .detail .art_cont{
+  font-size: 30px;
+  min-height: 520px;
+  color: #404040;
+  line-height: 50px;
+  padding: 60px 6px 6px 6px;
+ }
+ .detail .title_two{
+  float: right;
+   font-size: 20px;
+   color: #8f8f8f;
+   padding-top: 130px;
+ }
