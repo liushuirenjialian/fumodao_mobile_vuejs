@@ -19,6 +19,33 @@ $(document).ready(function(){
     });
 
     request(news_url,function(err,data){
+
+        //格式化date
+        Date.prototype.Format = function(format) {
+            var o = {
+                "M+" : this.getMonth() + 1, // month
+                "d+" : this.getDate(), // day
+                "h+" : this.getHours(), // hour
+                "m+" : this.getMinutes(), // minute
+                "s+" : this.getSeconds(), // second
+                "q+" : Math.floor((this.getMonth() + 3) / 3), // quarter
+                "S" : this.getMilliseconds()
+            };
+            if (/(y+)/.test(format)) {
+                format = format.replace(RegExp.$1, (this.getFullYear() + "")
+                        .substr(4 - RegExp.$1.length));
+            }
+            for ( var k in o) {
+                if (new RegExp("(" + k + ")").test(format)) {
+                    format = format.replace(RegExp.$1,
+                            RegExp.$1.length == 1 ? o[k] : ("00" + o[k])
+                                    .substr(("" + o[k]).length));
+                }
+            }
+            return format;
+        };
+       /*  new Date(date).Format("yyyy-MM-dd")
+*/
         if(err){console.log(err);}
         else{
             /*var Newdata=data.post;*/
@@ -34,15 +61,16 @@ $(document).ready(function(){
                 }
              var date="";
             if(post.date){
-            posts+='<li class="page'+p+'"><a href="fmddetail.html?tag='+window.tag+'&post_id='+post.id+'">'+post.title+'</a><i>'+post.date+'</i></li>';
+             var ddd= new Date(post.date).Format("yyyy-MM-dd")
+            posts+='<li class="page'+p+'"><a href="fmddetail.html?tag='+window.tag+'&post_id='+post.id+'">'+post.title+'</a><i>'+ddd+'</i></li>';
             }
             else{
             posts+='<li class="page'+p+'"><a href="fmddetail.html?tag='+window.tag+'post_id='+post.id+'">'+post.title+'</a></li>';
             }
         }
-        if(total<5){
+   /*     if(total<5){
               $(".more").hide();
-        }
+        }*/
         index.countPage=p;
      /*   debugger*/
         index.page=0;

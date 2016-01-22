@@ -34,13 +34,18 @@ var _hmt = _hmt || [];
         <!--  conTent begin-->
 
         <div class="body_type">
-
+        <!-- star_begin -->
+         <ul class="star_bg">
+        
+           <!--  <li><img v-bind:src="img"/></li> -->
+              <li v-for="n in star_num"><img  src="img/heroimg/star.png" /></li> 
+         </ul>
+         <!-- star_end -->
         <!-- 三种类型 -->
          <ul class="title3">
                 <li class="tuji cur" onclick="clickHeroItem(this,'tujixing')"></li>
                 <li class="fangyu" onclick="clickHeroItem(this,'fangyuxing')"></li>
                 <li class="yuancheng" onclick="clickHeroItem(this,'yuanchengxing')"></li>
-               
         </ul>
         <!-- 三种类型 end -->
          <div class="contents">
@@ -63,7 +68,6 @@ var _hmt = _hmt || [];
            <!--  <div class="heor_info">   -->
             <!-- hero_bg begin -->
             <div class="heor_bg heor1">
-
                  <!-- 人物头像 -->
             <div class="img_bg" style="{{ hero_image | bgimg}}"><!-- <img v-bind:src="img_bg"> --><!-- {{img_bg}} --></div>
             <!-- 人物头像 -->
@@ -74,7 +78,6 @@ var _hmt = _hmt || [];
                <div class="tab_four">
                 <ul class="title">
                     <li class="talentname1" v-for="jineng in jinengList"  v-on:click="showJinengIntro(jineng,$event)">
-                  <!--   <span></span> -->
                      <div class="{{ jinengname | jinengClass jineng.name }}">
                         <img class="fir_talent " v-bind:src="jineng.img"/>
                         <i>{{jineng.name}}</i>
@@ -137,8 +140,6 @@ var _hmt = _hmt || [];
         </div>
          </div>
         <!--  conTent end-->
-
-
 	</div>
   <script type="text/javascript" src="js/jquery.min.js"></script>
   <script  src="js/vue.min.js"></script>
@@ -162,6 +163,7 @@ var vm=new Vue({
     ,checkHerlid:0
     ,jinengname:""
     ,qiyuanname:""
+    ,star_num:0
     ,styleObject: {
 
     }
@@ -241,7 +243,7 @@ function getHeroData(key){
            other.qiyuanList=getQiyuanList(post);
 
            try {
-          
+             other.star_num=(post.custom_fields.star_num)?post.custom_fields.star_num[0]:"";
              other.hero_image=(post.custom_fields.image_mobile)?post.custom_fields.image_mobile[0]:"";
             /* other.weapon_image=post.custom_fields.weapon_image[0];*/
              other.weapon_image=(post.custom_fields.weapon_image)?post.custom_fields.weapon_image[0]:"";
@@ -252,6 +254,15 @@ function getHeroData(key){
            } catch (e) {
               console.log(e);
            }
+          /*  <div class="body_type">
+        <!-- star_begin --><!--  v-show:"star.img" -->
+         <ul class="star_bg" v-for="var in stars">
+            <li v-for="n in star_num"><img  src="img/heroimg/star.png" /></li> 
+         </ul>
+         <!-- star_end -->*/
+          /* if(other.star_num<=9){
+            var $star=$('.body_type ul.star_bg li img').append('')
+           }*/
            heroList[hero.id]=other;
            outList.push(hero);
            //outList[hero.id]=hero;
@@ -357,6 +368,7 @@ function bindHeroWuqi(heroid) {
   vm.$data.weapon_intro=other.weapon_intro;
   vm.$data.weapon_name=other.weapon_name;
    vm.$data.hero_image=other.hero_image;
+   vm.$data.star_num=Number(other.star_num);
  /*} else{
     $wuqi.remove();
   }*/
@@ -378,7 +390,7 @@ function checkCategories(key,post){
     }
     return false;
 }
-
+ //过滤器
 Vue.filter('bgimg',function(img){
   if(img){return 'background:url('+img+')no-repeat';}
 })
