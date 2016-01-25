@@ -72,10 +72,10 @@ body{
 }
 .index .home{
     text-indent: -9999px;
-    width: 128px;
+    width: 119px;
 }
 .index .wrap .nav{
-    width: 640px;
+    width: 641px;
  /*    height: 104px; 
     border:1px solid red;*/
     background: url(../img/homepage/banner_02.png)no-repeat;
@@ -86,10 +86,25 @@ body{
     display: inline-block;
     line-height: 70px;
 }
+.index li.offical_bbs a{
+  width: 123px;
+}
+.index li.huiying_area a{
+  width: 132px;
+}
+.index li.home a{
+  width: 123px;
+}
+.index li.data_area a{
+  width: 123px;
+}
+.index li.strategy_area a{
+  width: 123px;
+}
 .index .nav li a{
     display: inline-block;
     color: #dadada;
-    width: 123px;
+/*     width: 123px; */
     text-align: center;
     text-decoration: none;
     /* border:1px solid red; */

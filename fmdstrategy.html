@@ -20,6 +20,26 @@
       s.parentNode.insertBefore(hm, s);
     })();
     </script>
+         <script type="text/javascript">
+    var _hmt = _hmt || []; //平台、设备和操作系统     
+    var system = {
+        win: false,
+        mac: false
+        // xll: false
+    }; //检测平台     
+    var p = navigator.platform;
+    // console.log("p:"+p)
+    // alert(p);
+    system.win = p.indexOf("Win") == 0;
+    system.mac = p.indexOf("Mac") == 0;
+    // system.x11 = (p == "X11") || (p.indexOf("Linux") == 0);
+    if (system.win || system.mac) {//pc
+        /*location.replace("http://fmd.hulai.com/index.html");*/
+    } 
+    // else {//mobile phone
+    //     window.location.href = "http://www.baidu.com";
+    // }
+    </script>
 </head>
 <body class="strategy">
 	<div class="banner">
