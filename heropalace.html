@@ -318,7 +318,7 @@ function getJinengList(post){
        // eval("jineng.img=custom_fields.skill"+n+"_image[0];");//original 计算某个字符串并执行其中的js代码
        // eval("jineng.name=custom_fields.skill"+n+"_name[0];");
        // eval("jineng.intro=custom_fields.skill"+n+"_intro[0];");
-       var url="img/heroimg/img_h_14.jpg";
+       var url="img/heroimg/1.jpg";
        eval("temp.img=(custom_fields.skill"+n+"_image)?custom_fields.skill"+n+"_image[0]:'';");
        eval("temp.intro=(custom_fields.skill"+n+"_intro)?custom_fields.skill"+n+"_intro[0]:'';");
        eval("temp.name=(custom_fields.skill"+n+"_name)?custom_fields.skill"+n+"_name[0]:'';");
@@ -348,11 +348,18 @@ function getQiyuanList(post){
      var custom_fields=post.custom_fields;
      var temp={};
      try {
-       var url="img/heroimg/img_h_14.jpg";
+       var url="img/heroimg/2.png";
        temp.id=n;
        eval("temp.img=(custom_fields.karma"+n+"_image)?custom_fields.karma"+n+"_image[0]:ur;");
        eval("temp.intro=(custom_fields.karma"+n+"_intro)?custom_fields.karma"+n+"_intro[0]:'';");
        eval("temp.name=(custom_fields.karma"+n+"_name)?custom_fields.karma"+n+"_name[0]:'';");
+        if(temp.img==""&&temp.intro==""&&temp.name==""){
+          continue;
+       }else{
+          if(temp.img==""){
+              temp.img=url;
+          }
+       }
        qiyuanList.push(temp);
      } catch (e) {
 
