@@ -72,7 +72,7 @@ body{
 }
 .index .home{
     text-indent: -9999px;
-    width: 125px;
+    width: 128px;
 }
 .index .wrap .nav{
     width: 640px;
@@ -89,7 +89,7 @@ body{
 .index .nav li a{
     display: inline-block;
     color: #dadada;
-    width: 124px;
+    width: 123px;
     text-align: center;
     text-decoration: none;
     /* border:1px solid red; */
@@ -418,7 +418,7 @@ background-color: #5d3810;
 }
 .herop .contents .heor_bg .tab_three ul div.jineng{
 background-color: #5d3810;
-    width: 182px;
+    width: 185px;
     height: 124px;
 }
 .herop .contents .heor_bg .tab_four {
@@ -744,7 +744,7 @@ padding-top: 38px;
 } 
 .list .banner .back a{
   display: inline-block;
-    font-size: 35px;
+    font-size: 30px;
     color: #ffffff;
     float: left;
     text-decoration: none;
@@ -802,18 +802,18 @@ padding-top: 38px;
     background: url(../img/heroimg/img_h_03.png) no-repeat;
     width: 54px;
     height: 54px;
-    margin-left: 75px;
+    margin-left: 310px;
     margin-top: -7px;
      text-indent: -9999px;
  }
-/*  .list .cont ul.TAB_FOUR{
+  .list .cont ul.TAB_FOUR{
  width: 599px;
  padding: 20px;
  height: 62px;
- border: 1px solid red;
+/*  border: 1px solid red; */
 text-align: center;
-} */
-/*  .list .cont li.news{
+} 
+ .list .cont li.news{
  background: url(../img/listimg/banner_four_03.jpg) no-repeat;
  width: 151px;
  height: 60px;
@@ -827,8 +827,29 @@ text-align: center;
  float: left;
   text-indent: -9999px;
 } 
- .list .cont li.cur,.nav ul li:hover{
+ .list .cont li.news.cur,.nav ul li:hover{
 background: url(../img/listimg/banner_hover_03.png) no-repeat;
+ width: 144px;
+ height: 61px;
+ cursor: pointer;
+float: left;
+}
+.list .cont li.tell.cur,.nav ul li:hover{
+background: url(../img/listimg/banner_hover_04.png) no-repeat;
+ width: 144px;
+ height: 61px;
+ cursor: pointer;
+float: left;
+}
+.list .cont li.acti.cur,.nav ul li:hover{
+background: url(../img/listimg/banner_hover_06.png) no-repeat;
+ width: 144px;
+ height: 61px;
+ cursor: pointer;
+float: left;
+}
+.list .cont li.new.cur,.nav ul li:hover{
+background: url(../img/listimg/banner_hover_05.png) no-repeat;
  width: 144px;
  height: 61px;
  cursor: pointer;
@@ -847,20 +868,20 @@ float: left;
  height: 60px;
  float: left;
   text-indent: -9999px;
-} */
+} 
  .list .cont{  
     padding-top: 20px;
      background: url(../img/listimg/con_bg.jpg)repeat;
     min-height: 920px;
     width: 640px;
  }
-.list .cont ul.TAB_FOUR{
+/* .list .cont ul.TAB_FOUR{
    width: 599px;
-/*   padding: 20px; */
+padding: 20px;
   height: 60px;
     border: 1px solid red;
    border-top-width: 4px;
-  /*   border-right-width: 4px; */
+  border-right-width: 4px;
     border-bottom-width: 4px;
     border-left-width: 4px;
     border-top-style: solid;
@@ -889,17 +910,17 @@ float: left;
     background-color: rgba(180,163,138,0.5);
     background: #905c24;
     cursor: pointer;
-    color: white; }
+    color: white; } */
  .list .cont .content{
   padding:20px;
   width: 570px;
-   height: 800px;
+  /*  height: 800px; */
  }
  .list .cont .content{
   color:#545454;
   font-size: 28px;
   line-height: 72px;
-  border: 1px solid red;
+  /* border: 1px solid red; */
 
  }
  .list .m1{
@@ -907,10 +928,11 @@ float: left;
  }
  .list .content  ul.exp_ul li span.mark{
   margin-right: 5px;
+      font-size: 28px;
  } 
  .list .content  ul.exp_ul li a{
   display: inline-block;
-  width: 308px;
+  width: 325px;
   
   font-size: 28px;
   color: #545454;
@@ -921,7 +943,7 @@ float: left;
   text-decoration: none;
  }
   .list .ti{
-  float: right;
+ float: right; 
  }
  .list .content ul.exp_ul li
  {
@@ -929,16 +951,125 @@ float: left;
     font-size: 22px;
     height: 72px;
     line-height: 72px;
-    border-bottom: 1px solid #342f2b;
+    border-bottom: 1px solid #CABEBE;
     /* border: 1px solid red; */
     overflow: hidden;
  }
  .list .content .more{
     display: block;
-    line-height: 4.3;
+ /*    line-height: 4.3; */
     text-decoration: none;
     color: #545454;
     font-size: 25px;
     float: right;
 }
- 
+ /* 攻略区 */
+ .strategy{
+  width: 640px;
+  margin:0 auto;
+ }
+ .strategy  .banner{
+  background: url(../img/listimg/banner.jpg) repeat;
+  width: 640px;
+  height: 93px;
+}
+ .strategy .banner .back{
+
+padding-top: 38px;
+} 
+.strategy .banner .back a{
+  display: inline-block;
+    font-size: 30px;
+    color: #ffffff;
+    float: left;
+    text-decoration: none;
+
+}
+/* .detail .banner .go_back{
+  float: left;
+} */
+.strategy .banner .title
+{ 
+
+ /*  margin-top: 30px; */
+  float: left;
+  color: #ffffff;
+  font-size: 28px;
+  margin-left: 42px;
+}
+.strategy .foot{
+     background-color: #1c1c1c;
+    width: 640px;
+    height: 514px;
+    margin-top: -1px;
+
+}
+.strategy .down_foot a{
+  background: url(../img/heroimg/down_foot_03.jpg)no-repeat;
+  width: 490px;
+   height: 72px;
+   display: block;
+}
+.strategy .foot div p{
+   color: #c5c5c5;
+    padding-top: 66px;
+    text-align: center;
+}
+.strategy .foot div{
+
+   padding-top: 60px;
+
+  width: 490px;
+   height: 72px;
+   margin:0 auto;
+}
+.strategy .banner .down a {
+    background: url(../img/heroimg/down_05.png) no-repeat;
+    width: 145px;
+    height: 48px;
+    float: right;
+    margin-right: 15px;
+ /*    margin-top: 14px; */
+    display: block;
+}
+.strategy .banner .logo {
+    float: left;
+    background: url(../img/heroimg/img_h_03.png) no-repeat;
+    width: 54px;
+    height: 54px;
+    margin-left: 310px;
+    margin-top: -7px;
+     text-indent: -9999px;
+ }
+ .strategy .cont{  
+    padding-top: 20px;
+     background: url(../img/listimg/con_bg.jpg)repeat;
+    min-height: 920px;
+    width: 640px;
+ }
+ .strategy .cont ul
+ {
+  padding: 10px 46px 0px 46px;
+}
+ .strategy .cont ul li
+ {
+     border-bottom: 1px solid #570c0c;
+    padding-top: 21px;
+    padding-bottom: 22px;}
+
+  .strategy .cont li a {
+  width: 410px;
+  font-size: 30px;
+  color: #545454;
+  text-decoration: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: inline-block;
+}
+ .strategy .cont ul.posts li i {
+    font-size: 20px;
+    color: #545454;
+    font-style: normal;
+    float: right;
+}
