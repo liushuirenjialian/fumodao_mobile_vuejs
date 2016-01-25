@@ -1,8 +1,8 @@
 $(document).ready(function(){
-/*  var url = "http://games.hoolai.com/cms/?cat=226&json=get_category_posts&include=title,categories,date&count=1500";
-*/
-  var url = "http://games.hoolai.com/cms/?cat=147&json=get_category_posts&include=title,categories,date&count=1500";
+  var url = "http://games.hoolai.com/cms/?cat=226&json=get_category_posts&include=title,categories,date&count=1500";
 
+/*  var url = "http://games.hoolai.com/cms/?cat=147&json=get_category_posts&include=title,categories,date&count=1500";
+*/
  request(url,function(err,data){
 
         //格式化date
@@ -32,39 +32,39 @@ $(document).ready(function(){
   	if(err){console.log(err);}
   	else{
   		var $data=data.posts;
-  		/*var $newslist=getDataList(227,$data);
+  		var $newslist=getDataList(227,$data);
   		var $telllist=getDataList(230,$data);
   		var $newlist=getDataList(228,$data);
-  		var $actilist=getDataList(229,$data);*/
-  		var $newslist=getDataList(149,$data);
+  		var $actilist=getDataList(229,$data);
+/*  		var $newslist=getDataList(149,$data);
   		var $telllist=getDataList(151,$data);
   		var $newlist=getDataList(148,$data);
   		var $actilist=getDataList(150,$data);
-        var $zuixin=$('div.cont').find('ul.TAB_FOUR').find('li.news');
+*/        var $zuixin=$('div.cont').find('ul.TAB_FOUR').find('li.news');
         var $gonggao=$('div.cont').find('ul.TAB_FOUR').find('li.tell');
         var $xinwen=$('div.cont').find('ul.TAB_FOUR').find('li.new');
         var $huodong=$('div.cont').find('ul.TAB_FOUR').find('li.acti');
         var $exp_ul=$('div.cont').find('ul.exp_ul');
-      $exp_ul.html(getPageofData($newslist,'【最新】',149));
+      $exp_ul.html(getPageofData($newslist,'【最新】',227));
           $zuixin.click(function(){
           	$zuixin.siblings('li').removeClass('cur');
           	$zuixin.addClass('cur');
-          	 $exp_ul.html(getPageofData($newslist,'【最新】',149));
+          	 $exp_ul.html(getPageofData($newslist,'【最新】',227));
           })
            $gonggao.click(function(){
           	$gonggao.siblings('li').removeClass('cur');
           	$gonggao.addClass('cur');
-          	 $exp_ul.html(getPageofData($newlist,'【公告】',151));
+          	 $exp_ul.html(getPageofData($newlist,'【公告】',230));
           })
             $xinwen.click(function(){
           	$xinwen.siblings('li').removeClass('cur');
           	$xinwen.addClass('cur');
-          	 $exp_ul.html(getPageofData($newlist,'【新闻】',148));
+          	 $exp_ul.html(getPageofData($newlist,'【新闻】',228));
           })
              $huodong.click(function(){
           	$huodong.siblings('li').removeClass('cur');
           	$huodong.addClass('cur');
-          	 $exp_ul.html(getPageofData($newlist,'【活动】',150));
+          	 $exp_ul.html(getPageofData($newlist,'【活动】',229));
           })
   	}
   })

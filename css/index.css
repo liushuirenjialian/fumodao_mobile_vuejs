@@ -154,7 +154,7 @@ body{
    float: right;
 }
 .index  a.toutiao{
-    margin-top: 74px;
+    margin-top: 76px;
     display: inline-block;
    width: 500px;
    height: 58px;
@@ -231,10 +231,10 @@ body{
 }
 .herop .banner .back_but a{
     color: white;
-    margin-left:20px; 
+    margin-left:10px; 
     float: left;
-    margin-top: 20px;
-    font-size: 25px;
+    margin-top: 19px;
+    font-size: 35px;
     text-decoration: none;
 }
 .herop .banner .logo{
@@ -243,7 +243,7 @@ body{
     width: 54px;
     height: 54px;
    
-    margin-left: 319px;
+    margin-left: 305px;
     margin-top: 10px;
 }
 .herop .banner .down a{
@@ -606,7 +606,7 @@ margin:0 auto;
 .herop .foot{
      background: #071b28 url(../img/heroimg/heroi_07.jpg)no-repeat;
     width: 640px;
-    height: 514px;
+    height: 314px;
     margin-top: -1px;
 
 }
@@ -623,7 +623,7 @@ margin:0 auto;
 }
 .herop .foot div{
 
-   padding-top: 60px;
+   padding-top: 35px;
 
   width: 490px;
    height: 72px;
@@ -647,7 +647,7 @@ margin:0 auto;
 }
  .detail .banner .back{
 
-padding-top: 48px;
+padding-top: 28px;
 } 
 .detail .banner .back a{
   display: inline-block;
@@ -655,6 +655,7 @@ padding-top: 48px;
     color: #ffffff;
     float: left;
     text-decoration: none;
+       margin-left: 10px;
 
 }
 /* .detail .banner .go_back{
@@ -672,7 +673,7 @@ padding-top: 48px;
 .detail .foot{
      background-color: #1c1c1c;
     width: 640px;
-    height: 514px;
+    height: 314px;
     margin-top: -1px;
 
 }
@@ -684,13 +685,11 @@ padding-top: 48px;
 }
 .detail .foot div p{
    color: #c5c5c5;
-    padding-top: 66px;
+    padding-top: 56px;
     text-align: center;
 }
 .detail .foot div{
-
-   padding-top: 60px;
-
+   padding-top: 35px;
   width: 490px;
    height: 72px;
    margin:0 auto;
@@ -740,14 +739,15 @@ padding-top: 48px;
 }
  .list .banner .back{
 
-padding-top: 38px;
+padding-top: 28px;
 } 
 .list .banner .back a{
   display: inline-block;
-    font-size: 30px;
+    font-size: 35px;
     color: #ffffff;
     float: left;
     text-decoration: none;
+       margin-left: 10px;
 
 }
 /* .detail .banner .go_back{
@@ -762,10 +762,11 @@ padding-top: 38px;
   font-size: 28px;
   margin-left: 42px;
 }
+
 .list .foot{
      background-color: #1c1c1c;
     width: 640px;
-    height: 514px;
+    height: 314px;
     margin-top: -1px;
 
 }
@@ -777,12 +778,12 @@ padding-top: 38px;
 }
 .list .foot div p{
    color: #c5c5c5;
-    padding-top: 66px;
+    padding-top: 56px;
     text-align: center;
 }
 .list .foot div{
 
-   padding-top: 60px;
+   padding-top: 35px;
 
   width: 490px;
    height: 72px;
@@ -802,7 +803,7 @@ padding-top: 38px;
     background: url(../img/heroimg/img_h_03.png) no-repeat;
     width: 54px;
     height: 54px;
-    margin-left: 310px;
+    margin-left: 300px;
     margin-top: -7px;
      text-indent: -9999px;
  }
@@ -975,15 +976,15 @@ padding: 20px;
 }
  .strategy .banner .back{
 
-padding-top: 38px;
+padding-top: 28px;
 } 
 .strategy .banner .back a{
   display: inline-block;
-    font-size: 30px;
+    font-size: 35px;
     color: #ffffff;
     float: left;
     text-decoration: none;
-
+   margin-left: 10px;
 }
 /* .detail .banner .go_back{
   float: left;
@@ -1000,7 +1001,7 @@ padding-top: 38px;
 .strategy .foot{
      background-color: #1c1c1c;
     width: 640px;
-    height: 514px;
+    height: 314px;
     margin-top: -1px;
 
 }
@@ -1012,12 +1013,12 @@ padding-top: 38px;
 }
 .strategy .foot div p{
    color: #c5c5c5;
-    padding-top: 66px;
+    padding-top: 56px;
     text-align: center;
 }
 .strategy .foot div{
 
-   padding-top: 60px;
+   padding-top: 35px;
 
   width: 490px;
    height: 72px;
@@ -1044,7 +1045,7 @@ padding-top: 38px;
  .strategy .cont{  
     padding-top: 20px;
      background: url(../img/listimg/con_bg.jpg)repeat;
-    min-height: 920px;
+    min-height: 800px;
     width: 640px;
  }
  .strategy .cont ul
@@ -1053,7 +1054,7 @@ padding-top: 38px;
 }
  .strategy .cont ul li
  {
-     border-bottom: 1px solid #570c0c;
+     border-bottom: 1px solid #CABEBE;
     padding-top: 21px;
     padding-bottom: 22px;}
 
@@ -1072,4 +1073,14 @@ padding-top: 38px;
     color: #545454;
     font-style: normal;
     float: right;
+}
+.strategy .cont .more {
+    display: block;
+    /* line-height: 4.3; */
+    text-decoration: none;
+    color: #545454;
+    font-size: 25px;
+    float: right;
+    margin-right: 40px;
+    margin-top: 10px;
 }
