@@ -33,7 +33,7 @@ var _hmt = _hmt || [];
     system.mac = p.indexOf("Mac") == 0;
     // system.x11 = (p == "X11") || (p.indexOf("Linux") == 0);
     if (system.win || system.mac) {//pc
-      /*  location.replace("http://fmd.hulai.com/hero.html");*/
+        location.replace("http://fmd.hulai.com/hero.html");
     } 
     // else {//mobile phone
     //     window.location.href = "http://www.baidu.com";
@@ -47,7 +47,7 @@ var _hmt = _hmt || [];
 		   <div class="back_but"><a href="index.html"><返回</a> </div>
             <div class="logo"></div>
             <!-- 下载按钮 -->
-            <div class="down" title="下载"><a href="download.html"></a></div>
+            <div class="down" title="下载"><a href="https://itunes.apple.com/cn/app/fu-mo-dao-shou-kuan-fan-zhuan/id1050574135?mt=8"></a></div>
         </div>
           <!-- banner end -->
         <!--  conTent begin-->
@@ -55,7 +55,6 @@ var _hmt = _hmt || [];
         <div class="body_type">
         <!-- star_begin -->
          <ul class="star_bg">
-        
            <!--  <li><img v-bind:src="img"/></li> -->
               <li v-for="n in star_num"><img  src="img/heroimg/star.png" /></li> 
          </ul>
@@ -151,7 +150,7 @@ var _hmt = _hmt || [];
         </div>
         <div class="foot">
        <div >
-       <div class="down_foot"><a href="download.html"></a></div>
+       <div class="down_foot"><a href="https://itunes.apple.com/cn/app/fu-mo-dao-shou-kuan-fan-zhuan/id1050574135?mt=8"></a></div>
         <p>
             Copyright © 2012 Hoolai Games. All Rights Reserved 互爱互动（北京）科技有限公司版权所有
         </p>
@@ -166,7 +165,7 @@ var _hmt = _hmt || [];
 var resultList={};
 var url = "http://games.hoolai.com/cms/?json=get_category_posts&cat=221&include=title,content,categories,custom_fields&count=10000";
 var vm=new Vue({
-  el: '#app' //指定vue在哪里开始
+  el: '#app' //指定vuejs在哪里开始生效 
   ,data: {
     heros:[]
     ,jinengList:[]

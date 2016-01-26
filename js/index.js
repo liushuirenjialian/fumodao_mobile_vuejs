@@ -13,8 +13,6 @@ $(document).ready(function(){
             } else {
                 console.log("后台没有发文章");
             }
-
-
         }
     });
 
