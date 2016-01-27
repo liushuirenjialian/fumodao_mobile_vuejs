@@ -113,7 +113,7 @@ var _hmt = _hmt || [];
              <div class="tianming">
              <div class="wuqi_img">
                <img v-bind:src="weapon_image" alt="" /></div>
-                 <span class="tianmeng">{{ weapon_name }}</span></div>
+                 <span class="tianmeng">天命法宝-{{ weapon_name }}</span></div>
                <div class="info_wuqi">
                  
                    <span class="tianmeng_info">
@@ -236,6 +236,7 @@ function clickHeroItem(e,key){
 function bindData(){
 
   getHeroData("tujixing");
+
  
 }
 
@@ -321,7 +322,6 @@ function getJinengList(post){
        eval("temp.img=(custom_fields.skill"+n+"_image)?custom_fields.skill"+n+"_image[0]:'';");
        eval("temp.intro=(custom_fields.skill"+n+"_intro)?custom_fields.skill"+n+"_intro[0]:'';");
        eval("temp.name=(custom_fields.skill"+n+"_name)?custom_fields.skill"+n+"_name[0]:'';");
-
        if(temp.img==""&&temp.intro==""&&temp.name==""){
           continue;
        }else{
@@ -331,14 +331,10 @@ function getJinengList(post){
        }
        jinengList.push(temp);
      } catch (e) {
-
      } finally {
-
      }
-
    }
    return jinengList;
-
 }
 
 function getQiyuanList(post){
@@ -373,7 +369,6 @@ function bindHeroJineng(heroid){
     var jinengList=heroList[heroid].jinengList;
     vm.$data.jinengList=jinengList;
     vm.$data.jinengIntro=jinengList[0].intro;
-
      vm.$data.jinengname=jinengList[0].name;
 }
 
@@ -386,7 +381,6 @@ function bindHeroQiyuan(heroid){
 
 function bindHeroWuqi(heroid) {
 /*  $wuqi=$(content).*/
-
   var other=heroList[heroid];  
 /*  if(other.weapon_image!=undefined){*/
   vm.$data.weapon_image=other.weapon_image;

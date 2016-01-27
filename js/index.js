@@ -17,9 +17,8 @@ $(document).ready(function(){
     });
 
     request(news_url,function(err,data){
-
         //格式化date
-        Date.prototype.Format = function(format) {
+/*        Date.prototype.Format = function(format) {
             var o = {
                 "M+" : this.getMonth() + 1, // month
                 "d+" : this.getDate(), // day
@@ -41,7 +40,7 @@ $(document).ready(function(){
                 }
             }
             return format;
-        };
+        };*/
        /*  new Date(date).Format("yyyy-MM-dd")
 */
         if(err){console.log(err);}
@@ -71,7 +70,6 @@ $(document).ready(function(){
               $(".more").hide();
         }*/
         index.countPage=p;
-     /*   debugger*/
         index.page=0;
         document.getElementById("pages").innerHTML=posts;
         $('#pages').find('li').hide();

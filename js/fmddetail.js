@@ -43,6 +43,17 @@
 $(document).ready(function(){
 	 	var hash=window.location.search;
 	 	var args = getArgs(hash);
+    var tagg=args['tag'];
+    if(tagg==232){
+      $('div.back a').attr('href','fmdstrategy.html');
+    }
+    else{
+     
+        $('div.back a').attr('href','fmdlist.html');
+    }
+    
+
+    console.log('tag'+tagg);
      console.log('args'+hash)
     var url = 'http://games.hoolai.com/cms/?post_id=' + args['post_id'] + '&json=get_post&include=title,content,author,date';
      var pormise=request(url);

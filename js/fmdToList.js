@@ -6,29 +6,29 @@ $(document).ready(function(){
  request(url,function(err,data){
 
         //格式化date
-        Date.prototype.Format = function(format) {
-            var o = {
-                "M+" : this.getMonth() + 1, // month
-                "d+" : this.getDate(), // day
-                "h+" : this.getHours(), // hour
-                "m+" : this.getMinutes(), // minute
-                "s+" : this.getSeconds(), // second
-                "q+" : Math.floor((this.getMonth() + 3) / 3), // quarter
-                "S" : this.getMilliseconds()
-            };
-            if (/(y+)/.test(format)) {
-                format = format.replace(RegExp.$1, (this.getFullYear() + "")
-                        .substr(4 - RegExp.$1.length));
-            }
-            for ( var k in o) {
-                if (new RegExp("(" + k + ")").test(format)) {
-                    format = format.replace(RegExp.$1,
-                            RegExp.$1.length == 1 ? o[k] : ("00" + o[k])
-                                    .substr(("" + o[k]).length));
-                }
-            }
-            return format;
-        };
+     /* Date.prototype.Format = function(format) {
+          var o = {
+              "M+" : this.getMonth() + 1, // month
+              "d+" : this.getDate(), // day
+              "h+" : this.getHours(), // hour
+              "m+" : this.getMinutes(), // minute
+              "s+" : this.getSeconds(), // second
+              "q+" : Math.floor((this.getMonth() + 3) / 3), // quarter
+              "S" : this.getMilliseconds()
+          };
+          if (/(y+)/.test(format)) {
+              format = format.replace(RegExp.$1, (this.getFullYear() + "")
+                      .substr(4 - RegExp.$1.length));
+          }
+          for ( var k in o) {
+              if (new RegExp("(" + k + ")").test(format)) {
+                  format = format.replace(RegExp.$1,
+                          RegExp.$1.length == 1 ? o[k] : ("00" + o[k])
+                                  .substr(("" + o[k]).length));
+              }
+          }
+          return format;
+      };*/
   	if(err){console.log(err);}
   	else{
   		var $data=data.posts;
@@ -54,7 +54,7 @@ $(document).ready(function(){
            $gonggao.click(function(){
           	$gonggao.siblings('li').removeClass('cur');
           	$gonggao.addClass('cur');
-          	 $exp_ul.html(getPageofData($newlist,'【公告】',230));
+          	 $exp_ul.html(getPageofData($telllist,'【公告】',230));
           })
             $xinwen.click(function(){
           	$xinwen.siblings('li').removeClass('cur');
@@ -64,7 +64,7 @@ $(document).ready(function(){
              $huodong.click(function(){
           	$huodong.siblings('li').removeClass('cur');
           	$huodong.addClass('cur');
-          	 $exp_ul.html(getPageofData($newlist,'【活动】',229));
+          	 $exp_ul.html(getPageofData($actilist,'【活动】',229));
           })
   	}
   })
@@ -84,6 +84,7 @@ $(document).ready(function(){
             var ddd=post.date.substr(5,5);
              // var ddd= new Date(post.date).Format("MM-dd");
               /*$('.exp_ul time').text('<p>[]</p>')*/
+              window.tag=226;
               posts+='<li class="page'+p+'"><span class="mark m1 ">'+mark+'</span><a href="fmddetail.html?tag='+window.tag+'&post_id='+post.id+'">'+post.title+'</a><span class="time ti">'+ddd+'</span></li>';
         } else {     
                 posts+='<li class="page'+p+'"><span class="mark m1 ">'+mark+'</span><a href="fmddetail.html?tag='+window.tag+'&post_id='+post.id+'">'+post.title+'</a><span class="time ti"></span></li>';

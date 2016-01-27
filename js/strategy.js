@@ -15,7 +15,8 @@ $(document).ready(function(){
                 }
              var date="";
             if(post.date){
-                var ddd=post.date.substr(5,5)
+                var ddd=post.date.substr(5,5);
+                window.tag=232;
          /*  var ddd= new Date(post.date).Format("yyyy-MM-dd")，首先是 ie 对 new Date('2014-10-01')会得到NaN.Date.parse()方法不能兼容所有浏览器的。在ie中不能正常解析格式为2015-01-04的数据 */
             posts+='<li class="page'+p+'"><a href="fmddetail.html?tag='+window.tag+'&post_id='+post.id+'">'+post.title+'</a><i>'+ddd+'</i></li>';
             }
