@@ -1,10 +1,40 @@
+
+function getArgs(strs) {
+    var _strs = strs.length > 0 ? strs.substring(1) : '',
+        args = {},
+        items = _strs.split('&'),
+        len = items.length,
+        mame = null,
+        value = null,
+        item = [];
+    if (_strs.length == 0) {
+        console.log('没有要读取的字符串');
+        return;
+    }
+    for (var i = 0; i < len; i++) {
+        item = items[i].split("=");
+        name = item[0];
+        value = item[1];
+        name = decodeURIComponent(item[0]);
+        value = decodeURIComponent(item[1]);
+        args[name] = value;
+    }
+    return args;
+}
 $(document).ready(function(){
   var url = "http://games.hoolai.com/cms/?cat=226&json=get_category_posts&include=title,categories,date&count=1500";
 
 /*  var url = "http://games.hoolai.com/cms/?cat=147&json=get_category_posts&include=title,categories,date&count=1500";
-*/
+*/ 
+
+/*var hash=window.location.search;
+var args=getArgs(hash);
+
+var cat;*/
+cat=getArgs['tag'];
  request(url,function(err,data){
 
+ 
         //格式化date
      /* Date.prototype.Format = function(format) {
           var o = {
@@ -30,7 +60,7 @@ $(document).ready(function(){
           return format;
       };*/
   	if(err){console.log(err);}
-  	else{
+  	else {
   		var $data=data.posts;
   		var $newslist=getDataList(227,$data);
   		var $telllist=getDataList(230,$data);
@@ -40,11 +70,40 @@ $(document).ready(function(){
   		var $telllist=getDataList(151,$data);
   		var $newlist=getDataList(148,$data);
   		var $actilist=getDataList(150,$data);
-*/        var $zuixin=$('div.cont').find('ul.TAB_FOUR').find('li.news');
+*/      var $zuixin=$('div.cont').find('ul.TAB_FOUR').find('li.news');
         var $gonggao=$('div.cont').find('ul.TAB_FOUR').find('li.tell');
         var $xinwen=$('div.cont').find('ul.TAB_FOUR').find('li.new');
         var $huodong=$('div.cont').find('ul.TAB_FOUR').find('li.acti');
         var $exp_ul=$('div.cont').find('ul.exp_ul');
+        if(cat==227){
+          $zuixin.siblings('li').removeClass('cur');
+            $zuixin.addClass('cur');
+          $exp_ul.html(getPageofData($newslist,'【最新】',227));
+          more();
+          
+        }
+        if(cat==228){
+          $xinwen.siblings('li').removeClass('cur');
+            $xinwen.addClass('cur');
+          $exp_ul.html(getPageofData($newlist,'【新闻】',228));
+          more();
+
+        }
+        if(cat==229){
+          $huodong.siblings('li').removeClass('cur');
+            $huodong.addClass('cur');
+           $exp_ul.html(getPageofData($actilist,'【活动】',229));
+           more();
+               
+        }
+        if(cat==230)
+        {
+          $gonggao.siblings('li').removeClass('cur');
+            $gonggao.addClass('cur');
+          $exp_ul.html(getPageofData($telllist,'【公告】',230));
+          more();
+        }
+
       $exp_ul.html(getPageofData($newslist,'【最新】',227));
           $zuixin.click(function(){
           	$zuixin.siblings('li').removeClass('cur');
@@ -66,6 +125,9 @@ $(document).ready(function(){
           	$huodong.addClass('cur');
           	 $exp_ul.html(getPageofData($actilist,'【活动】',229));
           })
+
+
+
   	}
   })
 
@@ -82,12 +144,12 @@ $(document).ready(function(){
           if(i%rows==0){p++;}
           if (post.date) {
             var ddd=post.date.substr(5,5);
-             // var ddd= new Date(post.date).Format("MM-dd");
+             // var ddd= new Date(post.date).Format("MM-dd"); 
               /*$('.exp_ul time').text('<p>[]</p>')*/
-              window.tag=226;
-              posts+='<li class="page'+p+'"><span class="mark m1 ">'+mark+'</span><a href="fmddetail.html?tag='+window.tag+'&post_id='+post.id+'">'+post.title+'</a><span class="time ti">'+ddd+'</span></li>';
+              /*window.tag=226;*/
+              posts+='<li class="page'+p+'"><span class="mark m1 ">'+mark+'</span><a href="fmddetail.html?tag='+tag+'&post_id='+post.id+'">'+post.title+'</a><span class="time ti">'+ddd+'</span></li>';
         } else {     
-                posts+='<li class="page'+p+'"><span class="mark m1 ">'+mark+'</span><a href="fmddetail.html?tag='+window.tag+'&post_id='+post.id+'">'+post.title+'</a><span class="time ti"></span></li>';
+                posts+='<li class="page'+p+'"><span class="mark m1 ">'+mark+'</span><a href="fmddetail.html?tag='+tag+'&post_id='+post.id+'">'+post.title+'</a><span class="time ti"></span></li>';
           
         }}
         index.countPage=p;
@@ -111,13 +173,37 @@ $(document).ready(function(){
 })
   var index={};
   function clickNextPage(){
-
+    
     index.page++;
     $(".page"+index.page).show();
     if(index.page==index.countPage){
         $(".more").hide();
     }
 }
+   function more(){
+    var $more=$('div.cont').children('a.more');
+    var $TAB_FOUR=$('ul.TAB_FOUR').find('li');
+    var $cur;
+  $TAB_FOUR.each(function(){
+    if($(this).hasClass('cur')){
+       $cur=$(this);
+    }
+  })
+
+  if($cur.hasClass('news')){
+   clickNextPage();
+    }
+  
+  if($cur.hasClass('new')){
+   clickNextPage();
+    }
+  
+  if($cur.hasClass('acti')){
+  clickNextPage();
+    
+  }
+}
+
 function getDataList(cat, posts) {
     var posts_len = posts.length;
     var dataList = [];

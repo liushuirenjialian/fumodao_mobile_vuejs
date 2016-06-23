@@ -1099,3 +1099,38 @@ padding-top: 28px;
     margin-right: 40px;
     margin-top: 10px;
 }
+.little{
+/*   position: relative; */
+
+  width: 640px;
+  margin:0 auto;
+  /* background: url(../img/little_pic.jpg) no-repeat top center; */
+}
+.little .butt_bg{
+  
+  
+     background-size: cover;
+    position: relative;
+    /* background: url(../img/homepage/home_top_02.jpg) no-repeat top center; */
+  width: 640px;
+ /*  margin:0 auto; */
+  background: url(../img/little_pic.jpg) no-repeat top center;
+}
+.little .down_game{
+     background: url(../img/homepage/home_down.jpg) no-repeat;
+    width: 490px;
+    height: 72px;
+    display: inline-block;
+    margin: 22px 10px 10px 67px;
+    text-indent: -9999px;
+}
+.little .down_gamebg
+{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: block;
+  width: 640px;
+  height: 126px;
+  background: url(../img/homepage/home_bottom.jpg)no-repeat;
+}

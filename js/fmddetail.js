@@ -54,7 +54,7 @@ $(document).ready(function(){
     
 
     console.log('tag'+tagg);
-     console.log('args'+hash)
+    console.log('args'+hash)
     var url = 'http://games.hoolai.com/cms/?post_id=' + args['post_id'] + '&json=get_post&include=title,content,author,date';
      var pormise=request(url);
     pormise.then(function(data){
